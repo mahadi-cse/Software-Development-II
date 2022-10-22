@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class UserProfile extends AppCompatActivity {
     GridLayout mainGrid;
+    String name,nid,phone,email;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -48,6 +49,7 @@ public class UserProfile extends AppCompatActivity {
         //Set Event
         setSingleEvent(mainGrid);
         //setToggleEvent(mainGrid);
+
 
     }
 

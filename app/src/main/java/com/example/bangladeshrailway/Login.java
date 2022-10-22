@@ -99,7 +99,7 @@ public class Login extends Fragment {
         @Override
         public void onComplete(@NonNull Task<AuthResult> task) {
         if(task.isSuccessful()){
-            Toast.makeText(getActivity(), "Login Successful", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Login Successful bro", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getActivity(),UserProfile.class));
         }
         else{

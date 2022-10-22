@@ -22,7 +22,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class OTPVerrifcation extends AppCompatActivity {
@@ -42,9 +45,9 @@ public class OTPVerrifcation extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         email = getIntent().getStringExtra("email");
+        pass = getIntent().getStringExtra("pass");
         name = getIntent().getStringExtra("name");
         nid = getIntent().getStringExtra("nid");
-        pass = getIntent().getStringExtra("pass");
         phone = getIntent().getStringExtra("phone_number");
         String final_ph_num = "+88"+phone;
 
@@ -121,12 +124,31 @@ public class OTPVerrifcation extends AppCompatActivity {
             }
         });
     }
-public  void createUseraccount(String email,String pass){
+
+
+    public  void createUseraccount(String email,String pass){
     auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
         @Override
         public void onComplete(@NonNull Task<AuthResult> task) {
             if (task.isSuccessful()) {
-                Toast.makeText(OTPVerrifcation.this, "Account Registration Successful", Toast.LENGTH_SHORT).show();
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                Map<String,Object>  userInfo = new HashMap<>();
+                userInfo.put("name",name);
+                userInfo.put("email",email);
+                userInfo.put("nid",nid);
+                userInfo.put("phone",phone);
+                db.collection("UserInfo").document(email).set(userInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(OTPVerrifcation.this, "Data Added Successfully", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(OTPVerrifcation.this, "Data add failed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+//                Toast.makeText(OTPVerrifcation.this, "Account Registration Successful", Toast.LENGTH_SHORT).show();
             } else
                 Toast.makeText(OTPVerrifcation.this, "Account Registration Failed", Toast.LENGTH_SHORT).show();
         }

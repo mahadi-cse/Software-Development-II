@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "899836438134-mf99ps4fr4al3jo8dd87ciqutgi1raj8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bangladeshrailway",
+            "certificate_hash": "e18237187fe8e13beb7837f2f3a499e2c3b214e2"
+          }
+        },
+        {
           "client_id": "899836438134-u4peqbhfv8jg9n7cfivri1geknta9hhi.apps.googleusercontent.com",
           "client_type": 3
         }

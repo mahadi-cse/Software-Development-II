@@ -73,11 +73,12 @@ public class Register extends Fragment {
         String pass = et_password.getText().toString();
 
         Intent intent = new Intent(getActivity(),OTPVerrifcation.class);
-        intent.putExtra("email",email);
-        intent.putExtra("pass",pass);
+        intent.putExtra("name",name);
         intent.putExtra("nid",nid);
         intent.putExtra("phone_number",phone_number);
-        intent.putExtra("name",name);
+        intent.putExtra("email",email);
+        intent.putExtra("pass",pass);
+
 
         Toast.makeText(getActivity(), "Verification process going on", Toast.LENGTH_SHORT).show();
         startActivity(intent);
