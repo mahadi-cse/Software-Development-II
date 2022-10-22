@@ -7,7 +7,9 @@
         /> <item android:id="@+id/Tickets"
         android:title="Tickets"
         android:icon="@drawable/ic_ticket"
-        /> <item android:id="@+id/forget_pass"
+        />
+
+    <item android:id="@+id/user_info"
         android:title="Profile"
         android:icon="@drawable/ic_user"
         />

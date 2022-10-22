@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/activity_main.xml" value="0.1835897435897436" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/activity_main2.xml" value="0.1835897435897436" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/activity_one.xml" value="0.1835897435897436" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/activity_user_profile.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/content_main.xml" value="0.1835897435897436" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/fragment_forgetpassword.xml" value="0.1835897435897436" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/fragment_login.xml" value="0.1835897435897436" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/fragment_register.xml" value="0.1835897435897436" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/fragment_second.xml" value="0.1835897435897436" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/fragment_user_activity.xml" value="0.1835897435897436" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/fragment_user_info.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/layout/fragment_user_profile_activity.xml" value="0.17239583333333333" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Learn/Bangladesh Railway New/app/src/main/res/menu/user_items.xml" value="0.1835897435897436" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Learn/BangladeshRailway/app/src/main/res/drawable/ic_pass.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Learn/BangladeshRailway/app/src/main/res/drawable/ic_sign_in.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Learn/BangladeshRailway/app/src/main/res/drawable/ic_user.xml" value="0.1" />

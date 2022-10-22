@@ -4,42 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserProfile">
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="?attr/actionBarSize" >
-
-    </FrameLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bnView_userProfile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/white"
-        app:itemTextColor="@color/black"
-        app:menu="@menu/user_items"
-
-        />
+    tools:context=".UserActivity">
 
     <LinearLayout
-        android:layout_marginBottom="55dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="10">
+        >
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="250dp"
-            android:layout_weight="1">
-
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/user_bg" />
+                android:src="@drawable/user_bg"
+                />
 
         </RelativeLayout>
 
@@ -47,7 +27,7 @@
 
             android:id="@+id/mainGrid"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="500dp"
             android:layout_weight="5"
             android:alignmentMode="alignMargins"
             android:columnCount="3"
@@ -73,7 +53,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -111,7 +90,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -123,7 +101,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ticket dare"
+                        android:text="Ticket Fare"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="18sp"
@@ -152,7 +130,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -190,7 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+
                     android:orientation="vertical">
 
                     <ImageView
@@ -231,7 +208,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+
                     android:orientation="vertical">
 
                     <ImageView
@@ -269,7 +246,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+
                     android:orientation="vertical">
 
                     <ImageView
@@ -306,7 +283,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+
                     android:orientation="vertical">
 
                     <ImageView
@@ -343,7 +320,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+
                     android:orientation="vertical">
 
                     <ImageView
@@ -380,7 +357,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+
                     android:orientation="vertical">
 
                     <ImageView
