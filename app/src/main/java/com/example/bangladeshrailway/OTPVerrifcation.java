@@ -3,18 +3,14 @@ package com.example.bangladeshrailway;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
@@ -33,6 +29,7 @@ public class OTPVerrifcation extends AppCompatActivity {
     String codebySystem;
     TextView number_showing;
     FirebaseAuth auth;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,14 +53,11 @@ public class OTPVerrifcation extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
 
-        confrim.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            String manual_otp = otp_input.getText().toString();
-            if(!manual_otp.isEmpty()){
-                verifycode(manual_otp);
-            }
-            }
+        confrim.setOnClickListener(v -> {
+        String manual_otp = otp_input.getText().toString();
+        if(!manual_otp.isEmpty()){
+            verifycode(manual_otp);
+        }
         });
     }
 
@@ -104,20 +98,17 @@ public class OTPVerrifcation extends AppCompatActivity {
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
-        auth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(OTPVerrifcation.this, "Verification Successful", Toast.LENGTH_SHORT).show();
-                    createUseraccount(email,pass);
-                    startActivity(new Intent(OTPVerrifcation.this, MainActivity2.class));
-                    finish();
-                }
-                else{
-                    if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                        Toast.makeText(OTPVerrifcation.this, "Verification failed", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(OTPVerrifcation.this,Register.class));
-                    }
+        auth.signInWithCredential(credential).addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                Toast.makeText(OTPVerrifcation.this, "Verification Successful", Toast.LENGTH_SHORT).show();
+                createUseraccount(email,pass);
+                startActivity(new Intent(OTPVerrifcation.this, MainActivity2.class));
+                finish();
+            }
+            else{
+                if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                    Toast.makeText(OTPVerrifcation.this, "Verification failed", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(OTPVerrifcation.this,Register.class));
                 }
             }
         });
@@ -125,32 +116,25 @@ public class OTPVerrifcation extends AppCompatActivity {
 
 
     public  void createUseraccount(String email,String pass){
-    auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-        @Override
-        public void onComplete(@NonNull Task<AuthResult> task) {
-            if (task.isSuccessful()) {
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-                Map<String,Object>  userInfo = new HashMap<>();
-                userInfo.put("name",name);
-                userInfo.put("email",email);
-                userInfo.put("nid",nid);
-                userInfo.put("phone",phone);
-                db.collection("UserInfo").document(email).set(userInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(OTPVerrifcation.this, "Data Added Successfully", Toast.LENGTH_SHORT).show();
-                        }
-                        else{
-                            Toast.makeText(OTPVerrifcation.this, "Data add failed", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+    auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(task -> {
+        if (task.isSuccessful()) {
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            Map<String,Object>  userInfo = new HashMap<>();
+            userInfo.put("name",name);
+            userInfo.put("email",email);
+            userInfo.put("nid",nid);
+            userInfo.put("phone",phone);
+            db.collection("UserInfo").document(email).set(userInfo).addOnCompleteListener(task1 -> {
+                if(task1.isSuccessful()){
+                    Toast.makeText(OTPVerrifcation.this, "Data Added Successfully", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(OTPVerrifcation.this, "Data add failed", Toast.LENGTH_SHORT).show();
+                }
+            });
 //                Toast.makeText(OTPVerrifcation.this, "Account Registration Successful", Toast.LENGTH_SHORT).show();
-            } else
-                Toast.makeText(OTPVerrifcation.this, "Account Registration Failed", Toast.LENGTH_SHORT).show();
-        }
-
+        } else
+            Toast.makeText(OTPVerrifcation.this, "Account Registration Failed", Toast.LENGTH_SHORT).show();
     });
 }
 

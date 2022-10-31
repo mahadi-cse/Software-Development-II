@@ -14,4 +14,9 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="image_view_of_bangladesh_railway_vector">Image view of Bangladesh Railway Vector</string>
+    <string name="bangladesh_railway">Bangladesh Railway</string>
+    <string name="email_log">Email</string>
+    <string name="pass_log">Password</string>
+    <string name="sign_in">Sign in</string>
 </resources>

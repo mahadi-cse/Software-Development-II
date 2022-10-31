@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,17 +14,18 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:src="@drawable/train" />
+        android:src="@drawable/train"
+        android:contentDescription="@string/image_view_of_bangladesh_railway_vector" />
 
     <TextView
         android:layout_margin="10dp"
         android:id="@+id/bd_rail_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bangladesh Railway"
+        android:text="@string/bangladesh_railway"
         android:layout_below="@id/bd_railway"
         android:textStyle="bold"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_centerHorizontal="true"
 
         />
@@ -41,10 +41,12 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:drawableLeft="@drawable/ic_user"
+        android:drawableStart="@drawable/ic_user"
         android:drawablePadding="10dp"
         android:ems="15"
-        android:hint="Email" />
+        android:hint="@string/email_log"
+        android:autofillHints="abc@gmail.com"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/pass_login"
@@ -56,11 +58,12 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:drawableLeft="@drawable/ic_pass"
+        android:drawableStart="@drawable/ic_pass"
         android:drawablePadding="10dp"
         android:ems="15"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        android:hint="@string/pass_log"
+        android:inputType="textPassword"
+        android:autofillHints="ably123" />
 
     <Button
         android:id="@+id/log_in"
@@ -72,5 +75,5 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
-        android:text="Sign in" />
+        android:text="@string/sign_in" />
 </RelativeLayout>
