@@ -109,6 +109,7 @@ public class OTPVerrifcation extends AppCompatActivity {
                 if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                     Toast.makeText(OTPVerrifcation.this, "Verification failed", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(OTPVerrifcation.this,Register.class));
+                    finish();
                 }
             }
         });

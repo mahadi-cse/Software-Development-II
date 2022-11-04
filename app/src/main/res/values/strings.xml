@@ -19,4 +19,14 @@
     <string name="email_log">Email</string>
     <string name="pass_log">Password</string>
     <string name="sign_in">Sign in</string>
+    <string name="todo">TODO</string>
+    <string name="buy_tickets">Buy Tickets</string>
+    <string name="ticket_fare">Ticket Fare</string>
+    <string name="train_routes">Train Routes</string>
+    <string name="coach_view">Coach View</string>
+    <string name="train_list">Train List</string>
+    <string name="station_schedule">Station Schedule</string>
+    <string name="train_time">Train Time</string>
+    <string name="refund_calculate">Refund Calculate</string>
+    <string name="track">Track</string>
 </resources>

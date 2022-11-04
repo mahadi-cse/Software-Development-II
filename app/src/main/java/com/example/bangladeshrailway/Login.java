@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 public class Login extends Fragment {
     EditText et_email,et_pass;
     Button sign_up;
@@ -44,8 +46,9 @@ public class Login extends Fragment {
     private void loginUser(String email, String pass) {
     auth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(task -> {
     if(task.isSuccessful()){
-        Toast.makeText(getActivity(), "Login Successful bro", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Login Successful", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(getActivity(), MainActivity2.class));
+        requireActivity().finish();
     }
     else{
         Toast.makeText(getActivity(), "Login Failed", Toast.LENGTH_SHORT).show();

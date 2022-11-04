@@ -16,10 +16,34 @@
         android:theme="@style/Theme.BangladeshRailway"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity2"
+            android:name=".RefundCalculator"
             android:exported="false" />
         <activity
-            android:name=".ActivityOne"
+            android:name=".TrainTime"
+            android:exported="false" />
+        <activity
+            android:name=".StaionSchedule"
+            android:exported="false" />
+        <activity
+            android:name=".TrainList"
+            android:exported="false" />
+        <activity
+            android:name=".CoachView"
+            android:exported="false" />
+        <activity
+            android:name=".Track"
+            android:exported="false" />
+        <activity
+            android:name=".TrainRoutes"
+            android:exported="false" />
+        <activity
+            android:name=".TicketFare"
+            android:exported="false" />
+        <activity
+            android:name=".BuyTickets"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
             android:exported="false" />
         <activity
             android:name=".OTPVerrifcation"
