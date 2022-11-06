@@ -1,5 +1,6 @@
 package com.example.bangladeshrailway;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,7 @@ public class UserInfo extends Fragment {
     String s_name,s_email,s_nid,s_phone;
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

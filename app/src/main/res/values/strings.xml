@@ -29,4 +29,33 @@
     <string name="train_time">Train Time</string>
     <string name="refund_calculate">Refund Calculate</string>
     <string name="track">Track</string>
+    <string name="from">From</string>
+    <string name="To">To</string>
+    <string name="date">Date</string>
+    <string name="find_train">Find Train</string>
+    <string name="name">Name</string>
+    <string name="nid">NID</string>
+    <string name="phone">Phone</string>
+    <string name="sign_up">Sign up</string>
+    <string name="user_information">User Information</string>
+    <string name="edit_information">Edit Information</string>
+    <string-array name="class_spinner">
+        <item>Select Class</item>
+        <item>AC_B</item>
+        <item>AC_S</item>
+        <item>SNIGDHA</item>
+        <item>F_BEARTH</item>
+        <item>F_SEAT</item>
+        <item>F_CHAIR</item>
+        <item>S_CHAIR</item>
+        <item>SHOVON</item>
+    </string-array>
+
+    <string-array name="person_count">
+        <item>Person</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
 </resources>

@@ -16,6 +16,9 @@
         android:theme="@style/Theme.BangladeshRailway"
         tools:targetApi="31">
         <activity
+            android:name=".FindTrainShow"
+            android:exported="false" />
+        <activity
             android:name=".RefundCalculator"
             android:exported="false" />
         <activity

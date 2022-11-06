@@ -1,9 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BuyTickets">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/from"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/from_des"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="70dp"
+            android:autofillHints=""
+            android:background="@drawable/back"
+            android:drawableStart="@drawable/ic_source_des"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:hint="@string/from"
+            android:completionThreshold="0"
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/from"
+        android:id="@+id/to"
+
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/to_des"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableStart="@drawable/ic_source_des"
+            android:drawablePadding="16dp"
+            android:hint="@string/To"
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:background="@drawable/back"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:autofillHints=""
+            tools:ignore="RtlSymmetry" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/date_layout"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/to"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+
+            android:autofillHints=""
+            android:text="@string/date"
+            android:background="@drawable/back"
+            android:drawablePadding="16dp"
+            android:inputType="none"
+            android:paddingStart="15dp"
+            android:textSize="16sp"
+            app:drawableStartCompat="@drawable/ic_date"
+            tools:ignore="RtlSymmetry,TextFields" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_layout"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_se_cla"
+        android:contentDescription="@string/todo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/class_select"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/date_layout"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="20dp">
+
+        <Spinner
+            android:id="@+id/spinner_class"
+            android:layout_width="250dp"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/class_select"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_person" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/person_count"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/class_select"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="20dp">
+
+    <Spinner
+        android:id="@+id/person_spinner"
+        android:layout_width="250dp"
+        android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sub_find_train"
+        android:text="@string/find_train"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/person_count"
+        />
+</RelativeLayout>
+
+
