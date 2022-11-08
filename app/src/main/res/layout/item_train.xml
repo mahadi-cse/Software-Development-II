@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="16dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/findReCo">
+
+        <TextView
+            android:id="@+id/trainName"
+             android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/drutojan_express"
+            android:textSize="20sp"
+            android:paddingStart="10dp"
+            android:textColor="?android:attr/colorPressedHighlight"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/departure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trainName"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:text="@string/departure"
+            android:textSize="10sp"
+            tools:ignore="RtlSymmetry,SmallSp" />
+        <TextView
+            android:id="@+id/arraival"
+            android:layout_below="@id/trainName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arraival"
+            android:textSize="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="315dp"
+            />
+
+        <TextView
+            android:id="@+id/departureName"
+            android:layout_below="@id/departure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dhaka"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/border_color"
+            android:paddingStart="10dp"
+
+            />
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/departure"
+            android:src="@drawable/train_arrow"
+            android:layout_centerHorizontal="true"
+
+            />
+
+
+        <TextView
+            android:id="@+id/arraivalName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/departure"
+            android:layout_marginLeft="310dp"
+            android:layout_marginTop="10dp"
+            android:text="Dinajpur"
+            android:textColor="@color/border_color"
+            android:textSize="15dp"
+
+            />
+
+        <TextView
+            android:id="@+id/deparaturetime"
+            android:layout_below="@id/departureName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11 Nov,20.20"
+            android:textSize="11dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/arraivaltime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/departureName"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:text="12 Nov,05.20"
+            android:textColor="@color/black"
+            android:layout_alignEnd="@id/arraivalName"
+            android:textSize="11dp" />
+
+
+       <RelativeLayout
+           android:layout_marginTop="30dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/className"
+           android:layout_below="@id/deparaturetime">
+
+        <TextView
+            android:id="@+id/classInitialize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:text="Class"
+            android:textColor="@color/black"
+            android:textSize="11dp"
+            />
+
+           <TextView
+            android:id="@+id/ac_b"
+            android:layout_below="@id/classInitialize"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingStart="10dp"
+            android:text="AC_B"
+            android:textColor="@color/black"
+            android:textSize="11dp"
+            />
+
+           <TextView
+            android:id="@+id/snigsha"
+            android:layout_below="@id/ac_b"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:text="SNIGDHA"
+            android:textColor="@color/black"
+            android:textSize="11dp"
+            />
+           <TextView
+            android:id="@+id/s_chair"
+            android:layout_below="@id/snigsha"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:text="S_CHAIR"
+            android:textColor="@color/black"
+            android:textSize="11dp"
+            />
+           <TextView
+            android:id="@+id/shovon"
+            android:layout_below="@id/s_chair"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:text="SHOVON"
+            android:textColor="@color/black"
+            android:textSize="11dp"
+            />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deparaturetime"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/onlineInitialize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+                android:text="Online"
+                android:textColor="@color/black"
+                android:textSize="11dp" />
+
+            <TextView
+                android:id="@+id/online_ac_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/onlineInitialize"
+                android:layout_marginTop="15dp"
+
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/online_snigsha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/online_ac_b"
+                android:layout_marginTop="10dp"
+
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/onlines_chair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/online_snigsha"
+                android:layout_marginTop="10dp"
+
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/online_shovon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/onlines_chair"
+                android:layout_marginTop="10dp"
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deparaturetime"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/counterInitialize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Counter"
+                android:textColor="@color/black"
+                android:textSize="11dp" />
+
+            <TextView
+                android:id="@+id/counter_ac_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/counterInitialize"
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/counter_snigsha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/counter_ac_b"
+                android:layout_marginTop="10dp"
+
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/counters_chair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/counter_snigsha"
+                android:layout_marginTop="10dp"
+
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/counter_shovon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/counters_chair"
+                android:layout_marginTop="10dp"
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="30dp"
+           android:layout_alignEnd="@id/arraivaltime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/price"
+            android:layout_below="@id/deparaturetime">
+
+            <TextView
+                android:id="@+id/priceInitialize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="price"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                />
+
+            <TextView
+                android:id="@+id/price_ac_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/priceInitialize"
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/price_snigsha"
+                android:layout_below="@id/price_ac_b"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                />
+            <TextView
+                android:id="@+id/prices_chair"
+                android:layout_below="@id/price_snigsha"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                />
+            <TextView
+                android:id="@+id/price_shovon"
+                android:layout_below="@id/prices_chair"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="10dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                />
+
+        </RelativeLayout>
+
+        </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

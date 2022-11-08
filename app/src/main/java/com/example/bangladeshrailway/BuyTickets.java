@@ -52,7 +52,7 @@ public class BuyTickets extends AppCompatActivity  {
         etDate = findViewById(R.id.date);
         from=findViewById(R.id.from_des);
         to=findViewById(R.id.to_des);
-
+       Intent intent = new Intent(BuyTickets.this,FindTrainShow.class);
 
         etDate.setGravity(Gravity.CENTER_VERTICAL );
         Calendar calendar = Calendar.getInstance();
@@ -82,16 +82,17 @@ public class BuyTickets extends AppCompatActivity  {
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                fromUser = parent.getItemAtPosition(position).toString();
-               Toast.makeText(BuyTickets.this, fromUser, Toast.LENGTH_SHORT).show();
+                intent.putExtra("fromuser",fromUser);
            }
        });
         to.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 toUser = parent.getItemAtPosition(position).toString();
-                Toast.makeText(BuyTickets.this, toUser, Toast.LENGTH_SHORT).show();
+                intent.putExtra("touser",toUser);
             }
         });
+
         etDate.setOnClickListener(v -> {
             DatePickerDialog datePickerDialog = new DatePickerDialog(
                     BuyTickets.this, (view, year1, month1, day1) -> {
@@ -116,7 +117,7 @@ public class BuyTickets extends AppCompatActivity  {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String textClass = parent.getItemAtPosition(position).toString();
-                Toast.makeText(BuyTickets.this, textClass, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(BuyTickets.this, textClass, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -135,7 +136,7 @@ public class BuyTickets extends AppCompatActivity  {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String textPerson = parent.getItemAtPosition(position).toString();
-                Toast.makeText(BuyTickets.this, textPerson, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(BuyTickets.this, textPerson, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -146,8 +147,8 @@ public class BuyTickets extends AppCompatActivity  {
 
         btnTrainSubmit= findViewById(R.id.sub_find_train);
         btnTrainSubmit.setOnClickListener(v -> {
-            Toast.makeText(BuyTickets.this, fromUser, Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(BuyTickets.this,FindTrainShow.class));
+//            Toast.makeText(BuyTickets.this, fromUser, Toast.LENGTH_SHORT).show();
+            startActivity(intent);
         });
 
 

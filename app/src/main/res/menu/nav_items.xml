@@ -5,11 +5,10 @@
         android:icon="@drawable/ic_sign_in"
         android:iconTintMode="add"
         /> <item android:id="@+id/sign_up"
-        android:title="Sign up"
-        android:icon="@drawable/ic_sign_up"
-        /> <item android:id="@+id/forget_pass"
-        android:title="Forget Password"
-        android:icon="@drawable/ic_forget"
-        />
-
+    android:title="Sign up"
+    android:icon="@drawable/ic_sign_up"
+    /> <item android:id="@+id/forget_pass"
+    android:title="Forget Password"
+    android:icon="@drawable/ic_forget"
+    />
 </menu>

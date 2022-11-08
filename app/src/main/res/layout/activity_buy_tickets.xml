@@ -53,6 +53,7 @@
             android:hint="@string/To"
             android:inputType="text"
             android:paddingStart="16dp"
+            android:completionThreshold="0"
             android:background="@drawable/back"
             android:layout_marginTop="10dp"
             android:textColor="@android:color/black"

@@ -39,6 +39,9 @@
     <string name="sign_up">Sign up</string>
     <string name="user_information">User Information</string>
     <string name="edit_information">Edit Information</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="drutojan_express">DrutoJan Express</string>
+    <string name="departure">Departure</string>
     <string-array name="class_spinner">
         <item>Select Class</item>
         <item>AC_B</item>
