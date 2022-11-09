@@ -6,7 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
     app:cardCornerRadius="8dp"
-    android:layout_margin="16dp">
+    android:clickable="true"
+    android:layout_margin="16dp"
+    android:focusable="true">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -82,27 +84,26 @@
 
         <TextView
             android:id="@+id/deparaturetime"
-            android:layout_below="@id/departureName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="11 Nov,20.20"
-            android:textSize="11dp"
+            android:layout_below="@id/departureName"
             android:layout_marginTop="10dp"
             android:paddingStart="10dp"
+            android:text="11 Nov,20.20"
             android:textColor="@color/black"
-            />
+            android:textSize="11dp" />
 
         <TextView
             android:id="@+id/arraivaltime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/departureName"
+            android:layout_alignEnd="@id/arraivalName"
             android:layout_marginLeft="290dp"
             android:layout_marginTop="10dp"
             android:paddingStart="10dp"
             android:text="12 Nov,05.20"
             android:textColor="@color/black"
-            android:layout_alignEnd="@id/arraivalName"
             android:textSize="11dp" />
 
 
@@ -318,6 +319,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:paddingRight="10dp"
             android:layout_marginTop="30dp"
            android:layout_alignEnd="@id/arraivaltime"
             android:layout_width="wrap_content"
@@ -332,8 +334,7 @@
                 android:layout_marginTop="10dp"
                 android:text="price"
                 android:textColor="@color/black"
-                android:textSize="11dp"
-                />
+                android:textSize="11dp" />
 
             <TextView
                 android:id="@+id/price_ac_b"

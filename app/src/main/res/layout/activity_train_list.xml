@@ -1,9 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TrainList">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/routesadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:ems="12"
+            android:hint="Dhaka-Rajshahi" />
+
+        <EditText
+            android:id="@+id/trainnameadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/routesadd"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:ems="12"
+            android:hint="Drutojan" />
+
+        <EditText
+            android:id="@+id/fromadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trainnameadd"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:ems="12"
+            android:hint="from" />
+        <EditText
+            android:layout_below="@id/fromadd"
+            android:layout_marginTop="10dp"
+            android:id="@+id/toadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="to"
+            android:ems="12"
+            />
+
+        <EditText
+            android:layout_below="@id/toadd"
+            android:layout_marginTop="10dp"
+            android:id="@+id/nameinmap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="Name"
+            android:ems="12"
+            />
+
+        <EditText
+            android:id="@+id/depttimeadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameinmap"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:ems="12"
+            android:hint="Deprture" />
+
+        <EditText
+            android:layout_below="@id/depttimeadd"
+            android:layout_marginTop="10dp"
+            android:id="@+id/arravaladd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="Arrival"
+            android:ems="12"
+            />
+
+        <EditText
+            android:id="@+id/counter_ab_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/arravaladd"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:ems="12"
+            android:hint="counter AC_B" />
+        <EditText
+            android:layout_below="@id/counter_ab_add"
+            android:layout_marginTop="10dp"
+            android:id="@+id/online_ac_b_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="online AC_B"
+            android:ems="12"
+            />
+
+        <EditText
+            android:layout_below="@id/online_ac_b_add"
+            android:layout_marginTop="10dp"
+            android:id="@+id/counter_snigdha_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="counter SNIGDHA"
+            android:ems="12"
+            />
+        <EditText
+            android:layout_below="@id/counter_snigdha_add"
+            android:layout_marginTop="10dp"
+            android:id="@+id/online_snigdha_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="online SNIGDHA"
+            android:ems="12"
+            />
+
+        <EditText
+            android:layout_below="@id/online_snigdha_add"
+            android:layout_marginTop="10dp"
+            android:id="@+id/counter_chair_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="counter chair"
+            android:ems="12"
+            />
+        <EditText
+            android:layout_below="@id/counter_chair_add"
+            android:layout_marginTop="10dp"
+            android:id="@+id/online_chair_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="online chair"
+            android:ems="12"
+            />
+
+        <EditText
+            android:layout_below="@id/online_chair_add"
+            android:layout_marginTop="10dp"
+            android:id="@+id/counter_shovon_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="counter shovon"
+            android:ems="12"
+            />
+
+        <EditText
+            android:layout_below="@id/counter_shovon_add"
+            android:layout_marginTop="10dp"
+            android:id="@+id/online_shovon_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="online shovon"
+            android:ems="12"
+            />
+        <EditText
+            android:layout_below="@id/online_shovon_add"
+            android:layout_marginTop="10dp"
+            android:id="@+id/ac_b_price_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="AC_B price"
+            android:ems="12"
+            />
+        <EditText
+            android:layout_below="@id/ac_b_price_add"
+            android:layout_marginTop="10dp"
+            android:id="@+id/snigdha_price_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="SNIGDHA price"
+            android:ems="12"
+            />
+        <EditText
+            android:layout_below="@id/snigdha_price_add"
+            android:layout_marginTop="10dp"
+            android:id="@+id/chair_price_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="S_CHAIR price"
+            android:ems="12"
+            />
+        <EditText
+            android:layout_below="@id/chair_price_add"
+            android:layout_marginTop="10dp"
+            android:id="@+id/shovon_price_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="SHOVON price"
+            android:ems="12"
+            />
+
+        <Button
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/submit_add"
+            android:layout_centerHorizontal="true"
+            android:hint="Add"
+            android:layout_below="@id/shovon_price_add"
+            />
+    </RelativeLayout>
+
+</ScrollView>
