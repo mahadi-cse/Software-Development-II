@@ -1,6 +1,7 @@
 package com.example.bangladeshrailway;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,6 +41,7 @@ public class BuyTickets extends AppCompatActivity  {
     Button btnTrainSubmit;
     AutoCompleteTextView from,to;
     FirebaseFirestore firestore;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,10 @@ public class BuyTickets extends AppCompatActivity  {
         to.setAdapter(source);
 
 
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Getting Data");
+        progressDialog.show();
 
         firestore=FirebaseFirestore.getInstance();
         firestore.collection("SourceDes").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -75,6 +81,9 @@ public class BuyTickets extends AppCompatActivity  {
                     for(QueryDocumentSnapshot snapshot : task.getResult()){
                         Location.add(snapshot.getId());
                     }
+                    if (progressDialog.isShowing())
+                        progressDialog.dismiss();
+
                 }
             }
         });

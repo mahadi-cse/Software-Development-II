@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,15 +22,13 @@ public class FindTrainShow extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Model> arrayList;
     MyAdapter myAdapter;
-
+    ProgressDialog progressDialog;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_train_show);
-
-        ArrayList <String > availableTrains = new ArrayList<>();
 
 
         recyclerView = findViewById(R.id.findtrainrecycle);
@@ -48,6 +47,11 @@ public class FindTrainShow extends AppCompatActivity {
 
 
 
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Finding Train");
+        progressDialog.show();
+
         firestore=FirebaseFirestore.getInstance();
         firestore.collection("FindTrain").document(documentsearch).collection("TrainsInRoute").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @SuppressLint("NotifyDataSetChanged")
@@ -59,6 +63,9 @@ public class FindTrainShow extends AppCompatActivity {
                     arrayList.add(model);
                 }
                 myAdapter.notifyDataSetChanged();
+                if (progressDialog.isShowing())
+                    progressDialog.dismiss();
+
             }
         });
 

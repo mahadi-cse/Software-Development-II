@@ -1,6 +1,7 @@
 package com.example.bangladeshrailway;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,7 @@ public class UserInfo extends Fragment {
 
     TextView name,email,nid,phone;
     String s_name,s_email,s_nid,s_phone;
+    ProgressDialog progressDialog;
 
 
     @SuppressLint("SetTextI18n")
@@ -45,6 +47,10 @@ public class UserInfo extends Fragment {
         else{
             Toast.makeText(getActivity(), "No users found", Toast.LENGTH_SHORT).show();
         }
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Getting User Data...");
+        progressDialog.show();
         firestore=FirebaseFirestore.getInstance();
         firestore.collection("UserInfo").document(logEmail).get().addOnCompleteListener(task -> {
             DocumentSnapshot documentSnapshot = task.getResult();
@@ -58,6 +64,9 @@ public class UserInfo extends Fragment {
             email.setText("Email  : "+s_email);
             nid.setText("NID : "+s_nid);
             phone.setText("Phone : "+s_phone);
+                if (progressDialog.isShowing())
+                    progressDialog.dismiss();
+
             }
         }).addOnFailureListener(e -> Toast.makeText(getActivity(), "Error"+e.getMessage(), Toast.LENGTH_SHORT).show());
         return view;

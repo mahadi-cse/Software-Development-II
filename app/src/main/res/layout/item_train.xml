@@ -7,6 +7,7 @@
     app:cardElevation="8dp"
     app:cardCornerRadius="8dp"
     android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
     android:layout_margin="16dp"
     android:focusable="true">
 
@@ -191,6 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:text="Online"
                 android:textColor="@color/black"
@@ -203,6 +205,7 @@
                 android:layout_below="@id/onlineInitialize"
                 android:layout_marginTop="15dp"
 
+                android:layout_centerHorizontal="true"
                 android:paddingStart="10dp"
                 android:text="0"
                 android:textColor="@color/black"
@@ -216,6 +219,7 @@
                 android:layout_below="@id/online_ac_b"
                 android:layout_marginTop="10dp"
 
+                android:layout_centerHorizontal="true"
                 android:paddingStart="10dp"
                 android:text="0"
                 android:textColor="@color/black"
@@ -229,6 +233,7 @@
                 android:layout_below="@id/online_snigsha"
                 android:layout_marginTop="10dp"
 
+                android:layout_centerHorizontal="true"
                 android:paddingStart="10dp"
                 android:text="0"
                 android:textColor="@color/black"
@@ -242,6 +247,7 @@
                 android:layout_below="@id/onlines_chair"
                 android:layout_marginTop="10dp"
                 android:paddingStart="10dp"
+                android:layout_centerHorizontal="true"
                 android:text="0"
                 android:textColor="@color/black"
                 android:textSize="11dp"
@@ -262,6 +268,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
                 android:text="Counter"
                 android:textColor="@color/black"
                 android:textSize="11dp" />
@@ -273,6 +280,7 @@
                 android:layout_below="@id/counterInitialize"
                 android:layout_marginTop="15dp"
                 android:paddingStart="10dp"
+                android:layout_centerHorizontal="true"
                 android:text="0"
                 android:textColor="@color/black"
                 android:textSize="11dp"
@@ -285,6 +293,7 @@
                 android:layout_below="@id/counter_ac_b"
                 android:layout_marginTop="10dp"
 
+                android:layout_centerHorizontal="true"
                 android:paddingStart="10dp"
                 android:text="0"
                 android:textColor="@color/black"
@@ -298,6 +307,7 @@
                 android:layout_below="@id/counter_snigsha"
                 android:layout_marginTop="10dp"
 
+                android:layout_centerHorizontal="true"
                 android:paddingStart="10dp"
                 android:text="0"
                 android:textColor="@color/black"
@@ -311,6 +321,7 @@
                 android:layout_below="@id/counters_chair"
                 android:layout_marginTop="10dp"
                 android:paddingStart="10dp"
+                android:layout_centerHorizontal="true"
                 android:text="0"
                 android:textColor="@color/black"
                 android:textSize="11dp"
@@ -319,20 +330,23 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:paddingRight="10dp"
-            android:layout_marginTop="30dp"
-           android:layout_alignEnd="@id/arraivaltime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/price"
-            android:layout_below="@id/deparaturetime">
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deparaturetime"
+            android:layout_alignEnd="@id/arraivaltime"
+            android:layout_marginTop="30dp"
+            android:paddingRight="10dp"
+            android:textAlignment="center">
 
             <TextView
                 android:id="@+id/priceInitialize"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:text="price"
+                android:textAlignment="center"
+                android:text="Price"
                 android:textColor="@color/black"
                 android:textSize="11dp" />
 
@@ -341,6 +355,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/priceInitialize"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
                 android:paddingStart="10dp"
                 android:text="0"
@@ -350,42 +365,44 @@
 
             <TextView
                 android:id="@+id/price_snigsha"
-                android:layout_below="@id/price_ac_b"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/price_ac_b"
+                android:layout_centerHorizontal="true"
 
                 android:layout_marginTop="10dp"
                 android:paddingStart="10dp"
                 android:text="0"
                 android:textColor="@color/black"
                 android:textSize="11dp"
-                />
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/prices_chair"
-                android:layout_below="@id/price_snigsha"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:layout_below="@id/price_snigsha"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
+
                 android:paddingStart="10dp"
                 android:text="0"
                 android:textColor="@color/black"
                 android:textSize="11dp"
-                />
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/price_shovon"
-                android:layout_below="@id/prices_chair"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/prices_chair"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:paddingStart="10dp"
                 android:text="0"
                 android:textColor="@color/black"
                 android:textSize="11dp"
-                />
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
