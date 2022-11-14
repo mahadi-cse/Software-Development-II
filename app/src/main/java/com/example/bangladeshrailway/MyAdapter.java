@@ -82,7 +82,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myviewholder>
             priceshovon=itemView.findViewById(R.id .price_shovon);
 
             name=itemView.findViewById(R.id .trainName);
-            from=itemView.findViewById(R.id .departure);
+            from=itemView.findViewById(R.id .departureName);
             to=itemView.findViewById(R.id .arraivalName);
             arraivaltime=itemView.findViewById(R.id .arraivaltime);
             departuretime=itemView.findViewById(R.id .deparaturetime);

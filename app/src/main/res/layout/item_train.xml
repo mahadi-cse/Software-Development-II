@@ -41,22 +41,22 @@
             android:layout_below="@id/trainName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arraival"
-            android:textSize="10dp"
+            android:text="@string/arraival"
+            android:textSize="10sp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="315dp"
-            />
+            tools:ignore="SmallSp" />
 
         <TextView
             android:id="@+id/departureName"
-            android:layout_below="@id/departure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dhaka"
-            android:textSize="15dp"
+            android:layout_below="@id/departure"
             android:layout_marginTop="10dp"
-            android:textColor="@color/border_color"
             android:paddingStart="10dp"
+            android:text="Dhaka"
+            android:textColor="@color/border_color"
+            android:textSize="15dp"
 
             />
         <ImageView

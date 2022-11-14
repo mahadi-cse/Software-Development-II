@@ -25,6 +25,7 @@ public class FindTrainShow extends AppCompatActivity {
     ProgressDialog progressDialog;
 
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,20 +54,16 @@ public class FindTrainShow extends AppCompatActivity {
         progressDialog.show();
 
         firestore=FirebaseFirestore.getInstance();
-        firestore.collection("FindTrain").document(documentsearch).collection("TrainsInRoute").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @SuppressLint("NotifyDataSetChanged")
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                List <DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                for(DocumentSnapshot snapshot : list){
-                    Model model = snapshot.toObject(Model.class);
-                    arrayList.add(model);
-                }
-                myAdapter.notifyDataSetChanged();
-                if (progressDialog.isShowing())
-                    progressDialog.dismiss();
-
+        firestore.collection("FindTrain").document(documentsearch).collection("TrainsInRoute").get().addOnSuccessListener(queryDocumentSnapshots -> {
+            List <DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+            for(DocumentSnapshot snapshot : list){
+                Model model = snapshot.toObject(Model.class);
+                arrayList.add(model);
             }
+            myAdapter.notifyDataSetChanged();
+            if (progressDialog.isShowing())
+                progressDialog.dismiss();
+
         });
 
 
