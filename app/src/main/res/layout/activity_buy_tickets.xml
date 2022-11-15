@@ -8,7 +8,9 @@
     tools:context=".BuyTickets">
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:id="@+id/from"
+        android:layout_marginTop="50dp"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -21,8 +23,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="70dp"
             android:autofillHints=""
-            android:background="@drawable/back"
-            android:drawableStart="@drawable/ic_source_des"
+            android:drawableStart="@drawable/ic_source"
             android:drawablePadding="16dp"
             android:paddingStart="16dp"
             android:hint="@string/from"
@@ -36,6 +37,8 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_marginTop="20dp"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -48,13 +51,12 @@
             android:id="@+id/to_des"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:drawableStart="@drawable/ic_source_des"
+            android:drawableStart="@drawable/ic_des"
             android:drawablePadding="16dp"
             android:hint="@string/To"
             android:inputType="text"
             android:paddingStart="16dp"
             android:completionThreshold="0"
-            android:background="@drawable/back"
             android:layout_marginTop="10dp"
             android:textColor="@android:color/black"
             android:textSize="16sp"
@@ -67,23 +69,22 @@
 
         android:id="@+id/date_layout"
         android:layout_width="350dp"
+        android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/to"
         android:layout_centerHorizontal="true">
-
         <TextView
             android:id="@+id/date"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-
             android:autofillHints=""
-            android:text="@string/date"
             android:background="@drawable/back"
             android:drawablePadding="16dp"
             android:inputType="none"
-            android:paddingStart="15dp"
+            android:paddingStart="10dp"
+            android:text="@string/date"
             android:textSize="16sp"
             app:drawableStartCompat="@drawable/ic_date"
             tools:ignore="RtlSymmetry,TextFields" />
@@ -91,53 +92,74 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/date_layout"
-        android:layout_marginStart="45dp"
+    <RelativeLayout
+        android:id="@+id/relative_class"
         android:layout_marginTop="20dp"
-        android:src="@drawable/ic_se_cla"
-        android:contentDescription="@string/todo" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/class_select"
         android:layout_width="350dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
         android:layout_below="@id/date_layout"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="20dp">
-
-        <Spinner
-            android:id="@+id/spinner_class"
-            android:layout_width="250dp"
-            android:layout_height="match_parent" />
-    </com.google.android.material.textfield.TextInputLayout>
+        android:background="@drawable/back"
+        >
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/class_select"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/ic_person" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_se_cla" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/class_select"
+            android:layout_width="450dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_centerVertical="true">
+
+            <Spinner
+                android:id="@+id/spinner_class"
+                android:layout_width="250dp"
+                android:layout_height="match_parent" />
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/person_count"
-        android:layout_width="350dp"
-        android:layout_height="45dp"
-        android:layout_below="@id/class_select"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="20dp">
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
 
-    <Spinner
-        android:id="@+id/person_spinner"
-        android:layout_width="250dp"
-        android:layout_height="match_parent" />
-    </com.google.android.material.textfield.TextInputLayout>
+
+   <RelativeLayout
+       android:id="@+id/relative_person"
+       android:layout_marginTop="20dp"
+       android:layout_width="350dp"
+       android:layout_height="50dp"
+       android:layout_centerHorizontal="true"
+       android:layout_below="@id/relative_class"
+       android:background="@drawable/back"
+
+       >
+
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerVertical="true"
+           android:layout_marginStart="6dp"
+           android:contentDescription="@string/todo"
+           android:src="@drawable/ic_person_green" />
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:id="@+id/person_count"
+           android:layout_width="450dp"
+           android:layout_height="50dp"
+           android:layout_marginStart="50dp"
+           android:layout_centerVertical="true">
+
+           <Spinner
+               android:id="@+id/person_spinner"
+               android:layout_width="250dp"
+               android:layout_height="match_parent" />
+       </com.google.android.material.textfield.TextInputLayout>
+   </RelativeLayout>
 
     <Button
         android:layout_width="wrap_content"
@@ -146,7 +168,7 @@
         android:text="@string/find_train"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/person_count"
+        android:layout_below="@id/relative_person"
         />
 </RelativeLayout>
 

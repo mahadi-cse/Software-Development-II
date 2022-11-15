@@ -1,5 +1,6 @@
 package com.example.bangladeshrailway;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,12 +15,12 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.Objects;
 
 public class Login extends Fragment {
     EditText et_email,et_pass;
     Button sign_up;
     FirebaseAuth auth;
+    ProgressDialog progressDialog;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,6 +38,10 @@ public class Login extends Fragment {
         sign_up.setOnClickListener(v -> {
             String email = et_email.getText().toString();
             String pass = et_pass.getText().toString();
+            progressDialog = new ProgressDialog(getActivity());
+            progressDialog.setCancelable(false);
+            progressDialog.setMessage("Logging...");
+            progressDialog.show();
             loginUser(email,pass);
         });
         // Inflate the layout for this fragment
@@ -46,6 +51,8 @@ public class Login extends Fragment {
     private void loginUser(String email, String pass) {
     auth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(task -> {
     if(task.isSuccessful()){
+        if (progressDialog.isShowing())
+            progressDialog.dismiss();
         Toast.makeText(getActivity(), "Login Successful", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(getActivity(), MainActivity2.class));
         requireActivity().finish();

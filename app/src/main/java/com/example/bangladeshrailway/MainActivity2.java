@@ -1,19 +1,20 @@
 package com.example.bangladeshrailway;
 
+import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Color;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.GridLayout;
+
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -24,7 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity2 extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
@@ -51,26 +52,37 @@ public class MainActivity2 extends AppCompatActivity {
         bottomNavigationView=findViewById(R.id.bnView_userProfile);
 
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id= item.getItemId();
-                if(id==R.id.Home){
-                loadFrag(new UserActivity(),false);
-                }
-                else if(id==R.id.Tickets){
-                    loadFrag(new Tickets(),false);
-                }
-                else {
-                    loadFrag(new UserInfo(),false);
-                }
-
-                return true;
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            int id= item.getItemId();
+            if(id==R.id.Home){
+            loadFrag(new UserActivity(),false);
             }
+            else if(id==R.id.Tickets){
+                loadFrag(new Tickets(),false);
+            }
+            else {
+                loadFrag(new UserInfo(),false);
+            }
+
+            return true;
         });
         bottomNavigationView.setSelectedItemId(R.id.Home);
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        new AlertDialog.Builder(MainActivity2.this)
+                .setTitle(R.string.app_name)
+                .setIcon(R.drawable.ic_rail_icon)
+        .setMessage("          Do you want to exit ?").setCancelable(false)
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    dialog.cancel();
+                    finish();
+                }).setNegativeButton("No",null)
+                .show();
     }
 
     public void loadFrag(Fragment fragment , boolean flag ){

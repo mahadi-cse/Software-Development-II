@@ -1,11 +1,13 @@
 package com.example.bangladeshrailway;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bnView=findViewById(R.id.bnView);
+
 
         bnView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -62,5 +65,21 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, MainActivity2.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
             finish();
         }
+    }
+
+    public void onBackPressed() {
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle(R.string.app_name)
+                .setIcon(R.drawable.ic_rail_icon)
+                .setMessage("          Do you want to exit ?").setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        finish();
+                    }
+                }).setNegativeButton("No",null)
+                .show();
     }
 }
