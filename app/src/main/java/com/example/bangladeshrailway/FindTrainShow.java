@@ -43,7 +43,7 @@ public class FindTrainShow extends AppCompatActivity {
         Toast.makeText(this, documentsearch, Toast.LENGTH_SHORT).show();
 
         arrayList=new ArrayList<>();
-        myAdapter=new MyAdapter(arrayList);
+        myAdapter=new MyAdapter(arrayList,getApplicationContext());
         recyclerView.setAdapter(myAdapter);
 
 
