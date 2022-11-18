@@ -43,6 +43,9 @@
     <string name="drutojan_express">DrutoJan Express</string>
     <string name="departure">Departure</string>
     <string name="arraival">Arraival</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_4">4</string>
     <string-array name="class_spinner">
         <item>Select Class</item>
         <item>AC_B</item>

@@ -2,7 +2,6 @@ package com.example.bangladeshrailway;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -11,8 +10,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridLayout;
-import android.widget.Toast;
 
 public class UserActivity extends Fragment implements View.OnClickListener{
 
@@ -67,7 +64,7 @@ public class UserActivity extends Fragment implements View.OnClickListener{
                 startActivity(new Intent(getActivity(),CoachView.class));
                 break;
             case R.id.train_list:
-                startActivity(new Intent(getActivity(),TrainList.class));
+                startActivity(new Intent(getActivity(), VerifyTicket.class));
                 break;
             case R.id.schedule:
                 startActivity(new Intent(getActivity(),StaionSchedule.class));

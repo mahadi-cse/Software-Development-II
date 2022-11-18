@@ -32,7 +32,7 @@
             android:name=".StaionSchedule"
             android:exported="false" />
         <activity
-            android:name=".TrainList"
+            android:name=".VerifyTicket"
             android:exported="false" />
         <activity
             android:name=".CoachView"

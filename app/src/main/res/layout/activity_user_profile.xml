@@ -289,13 +289,13 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/ic_train"
+                        android:src="@drawable/ic_train_time"
                         android:contentDescription="@string/todo" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/train_list"
+                        android:text="@string/train_time"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="18sp"
@@ -369,16 +369,16 @@
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/ic_train_time"
+                        android:src="@drawable/ic_verifyticket"
                         android:contentDescription="@string/todo" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/train_time"
+                        android:text="Verify Ticket"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="18sp"

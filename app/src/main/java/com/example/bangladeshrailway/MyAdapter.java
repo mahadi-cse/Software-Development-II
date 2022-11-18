@@ -1,10 +1,13 @@
 package com.example.bangladeshrailway;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,12 +17,13 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myviewholder>
 {
+    int temp;
     ArrayList<Model> datalist;
-    Context context;
+    private itemClickListener itemClickListener;
 
-    public MyAdapter(ArrayList<Model> datalist,Context context) {
+    public MyAdapter(ArrayList<Model> datalist, itemClickListener itemClickListener) {
         this.datalist = datalist;
-        this.context=context;
+        this.itemClickListener=itemClickListener;
     }
 
     @NonNull
@@ -30,9 +34,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myviewholder>
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Myviewholder holder, int position) {
-
-        final Model temp= datalist.get(position);
+    public void onBindViewHolder(@NonNull Myviewholder holder, @SuppressLint("RecyclerView") int position) {
 
         holder.counterac_b.setText(datalist.get(position).getCounterAC_B());
         holder.countersnigdha.setText(datalist.get(position).getCounterSNIGDHA());
@@ -57,20 +59,24 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myviewholder>
         holder.arraivaltime.setText(datalist.get(position).getArraivalTime());
         holder.departuretime.setText(datalist.get(position).getDepartureTime());
 
-        holder.name.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,SeatSelcetion.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+                itemClickListener.onItemClick(datalist.get(position));
             }
         });
+
     }
 
     @Override
     public int getItemCount() {
         return datalist.size();
     }
+
+    public interface itemClickListener{
+        void onItemClick(Model model);
+    }
+
 
     class Myviewholder extends RecyclerView.ViewHolder
     {

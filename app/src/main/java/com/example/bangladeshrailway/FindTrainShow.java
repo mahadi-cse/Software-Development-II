@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -43,7 +44,13 @@ public class FindTrainShow extends AppCompatActivity {
         Toast.makeText(this, documentsearch, Toast.LENGTH_SHORT).show();
 
         arrayList=new ArrayList<>();
-        myAdapter=new MyAdapter(arrayList,getApplicationContext());
+        myAdapter=new MyAdapter(arrayList, new MyAdapter.itemClickListener() {
+            @Override
+            public void onItemClick(Model model) {
+                Toast.makeText(FindTrainShow.this, model.getName(), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),SeatSelcetion.class));
+            }
+        });
         recyclerView.setAdapter(myAdapter);
 
 

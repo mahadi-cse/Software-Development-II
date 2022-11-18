@@ -11,15 +11,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class TrainList extends AppCompatActivity {
+public class VerifyTicket extends AppCompatActivity {
     Button btn_sb_add;
     EditText  routes,trainnameaddd,counterac_b,countersnigdha,counters_chair,countershovon,
             onlineac_b,onlinesnigdha,onlines_chair,onlineshovon,
@@ -30,7 +28,7 @@ public class TrainList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_train_list);
+        setContentView(R.layout.activity_verify_ticket);
         getSupportActionBar().setTitle("Train List");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -98,10 +96,10 @@ public class TrainList extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful()){
-                                    Toast.makeText(TrainList.this, "Data Added", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(VerifyTicket.this, "Data Added", Toast.LENGTH_SHORT).show();
                                 }
                                 else{
-                                    Toast.makeText(TrainList.this, "Data add failed", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(VerifyTicket.this, "Data add failed", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
