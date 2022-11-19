@@ -17,7 +17,6 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myviewholder>
 {
-    int temp;
     ArrayList<Model> datalist;
     private itemClickListener itemClickListener;
 

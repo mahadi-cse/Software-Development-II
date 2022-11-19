@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity2 extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
