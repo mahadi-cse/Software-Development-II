@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    app:cardElevation="8dp"
+    android:layout_marginTop="10dp"
+    android:layout_margin="10dp"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/stationname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:text="Birampur"
+                android:textColor="@color/border_color"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_marginTop="1dp"
+                android:id="@+id/trainsinilialize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/stationname"
+                android:layout_marginStart="20dp"
+                android:text="Trains :"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                />
+            <TextView
+                android:layout_marginTop="1dp"
+                android:id="@+id/trains"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/stationname"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/trainsinilialize"
+                android:text="Ekota,Drutojan,Nilsagar"
+                android:layout_marginBottom="10dp"
+                />
+
+
+        </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

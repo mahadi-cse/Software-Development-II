@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ekota (705)"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:id="@+id/trainnamespacific"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17.32"
+            android:layout_toEndOf="@id/trainnamespacific"
+            android:id="@+id/inTime"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="20dp"
+            />
+        <TextView
+            android:id="@+id/outTime"
+            android:layout_toEndOf="@id/inTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17.35"
+            android:paddingEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="20dp"
+            />
+        <TextView
+            android:id="@+id/startstation"
+            android:layout_toEndOf="@id/outTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dhaka"
+            android:paddingEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="35dp"
+            />
+
+        <TextView
+            android:id="@+id/finaldes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="end"
+            android:paddingEnd="10dp"
+            android:text="B SIrajul"
+            android:textColor="@color/black" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

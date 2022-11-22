@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 public class UserActivity extends Fragment implements View.OnClickListener{
 
-    CardView buyTickets,fare,routes,track,coach,trainList,schedule,trainTime,refund;
+    CardView buyTickets,fare,routes,track,coach,trainTime,schedule,verifyTicket,refund;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -25,9 +25,9 @@ public class UserActivity extends Fragment implements View.OnClickListener{
         routes=view.findViewById(R.id.routes);
         track=view.findViewById(R.id.track);
         coach=view.findViewById(R.id.coach);
-        trainList=view.findViewById(R.id.train_list);
-        schedule=view.findViewById(R.id.schedule);
         trainTime=view.findViewById(R.id.train_time);
+        schedule=view.findViewById(R.id.schedule);
+        verifyTicket=view.findViewById(R.id.verify_ticket);
         refund=view.findViewById(R.id.refund);
 
         buyTickets.setOnClickListener(this);
@@ -35,9 +35,9 @@ public class UserActivity extends Fragment implements View.OnClickListener{
         routes.setOnClickListener(this);
         track.setOnClickListener(this);
         coach.setOnClickListener(this);
-        trainList.setOnClickListener(this);
-        schedule.setOnClickListener(this);
         trainTime.setOnClickListener(this);
+        schedule.setOnClickListener(this);
+        verifyTicket.setOnClickListener(this);
         refund.setOnClickListener(this);
 
 
@@ -63,14 +63,14 @@ public class UserActivity extends Fragment implements View.OnClickListener{
             case R.id.coach:
                 startActivity(new Intent(getActivity(),CoachView.class));
                 break;
-            case R.id.train_list:
-                startActivity(new Intent(getActivity(), VerifyTicket.class));
+            case R.id.train_time:
+                startActivity(new Intent(getActivity(), TrainTime.class));
                 break;
             case R.id.schedule:
                 startActivity(new Intent(getActivity(),StaionSchedule.class));
                 break;
-            case R.id.train_time:
-                startActivity(new Intent(getActivity(),TrainTime.class));
+            case R.id.verify_ticket:
+                startActivity(new Intent(getActivity(),VerifyTicket.class));
                 break;
             case R.id.refund:
                 startActivity(new Intent(getActivity(),RefundCalculator.class));
