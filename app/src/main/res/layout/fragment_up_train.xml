@@ -7,6 +7,7 @@
 
     <!-- TODO: Update blank fragment layout -->
    <RelativeLayout
+       android:layout_marginTop="?attr/actionBarSize"
        android:layout_width="match_parent"
        android:layout_height="match_parent">
        <RelativeLayout
@@ -21,6 +22,7 @@
                android:text="Train Name"
                android:layout_marginTop="20dp"
                android:textColor="@color/black"
+               android:textStyle="bold"
                android:layout_marginStart="10dp"
                />
            <TextView
@@ -29,10 +31,11 @@
                android:layout_height="wrap_content"
                android:text="In"
                android:layout_toEndOf="@id/t1"
+               android:textStyle="bold"
                android:layout_centerHorizontal="true"
                android:layout_marginTop="20dp"
                android:textColor="@color/black"
-               android:layout_marginStart="25dp"
+               android:layout_marginStart="20dp"
                />
            <TextView
                android:id="@+id/a2"
@@ -40,33 +43,36 @@
                android:layout_height="wrap_content"
                android:text="Out"
                android:layout_toEndOf="@id/a1"
-               android:paddingEnd="20dp"
                android:layout_marginTop="20dp"
+               android:textStyle="bold"
                android:textColor="@color/black"
-               android:layout_marginStart="45dp"
+               android:layout_marginStart="25dp"
                />
            <TextView
                android:id="@+id/a3"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Starting"
+               android:text="Starting-time"
                android:layout_toEndOf="@id/a2"
-               android:paddingEnd="20dp"
+               android:textStyle="bold"
                android:layout_marginTop="20dp"
                android:textColor="@color/black"
-               android:layout_marginStart="40dp"
+               android:layout_marginStart="23dp"
                />
+
            <TextView
                android:id="@+id/a4"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="Finish"
+               android:layout_marginStart="15dp"
+               android:layout_marginTop="20dp"
                android:gravity="end"
                android:paddingEnd="10dp"
-               android:layout_marginTop="20dp"
+               android:text="Destination-time"
                android:textColor="@color/black"
-               android:layout_marginStart="15dp"
+               android:textStyle="bold"
                />
+
 
 
        </RelativeLayout>

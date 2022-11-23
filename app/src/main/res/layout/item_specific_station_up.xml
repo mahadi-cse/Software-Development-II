@@ -24,7 +24,7 @@
             android:id="@+id/inTime"
             android:layout_marginTop="20dp"
             android:textColor="@color/black"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="8dp"
             />
         <TextView
             android:id="@+id/outTime"
@@ -32,21 +32,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="17.35"
-            android:paddingEnd="20dp"
             android:layout_marginTop="20dp"
             android:textColor="@color/black"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="6dp"
             />
         <TextView
             android:id="@+id/startstation"
             android:layout_toEndOf="@id/outTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dhaka"
-            android:paddingEnd="20dp"
+            android:text="Dhaka-10.10"
             android:layout_marginTop="20dp"
             android:textColor="@color/black"
-            android:layout_marginStart="35dp"
+            android:layout_marginStart="20dp"
             />
 
         <TextView
@@ -57,7 +55,7 @@
             android:layout_marginTop="20dp"
             android:gravity="end"
             android:paddingEnd="10dp"
-            android:text="B SIrajul"
+            android:text="Panchagarh-20.40"
             android:textColor="@color/black" />
 
 

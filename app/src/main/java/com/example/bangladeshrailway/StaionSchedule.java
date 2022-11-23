@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -38,7 +39,15 @@ public class StaionSchedule extends AppCompatActivity {
         recyclerstation.setLayoutManager(new LinearLayoutManager(this));
 
         arrayList= new ArrayList<>();
-        adapterStaionSchedule = new AdapterStaionSchedule(arrayList);
+        adapterStaionSchedule = new AdapterStaionSchedule(arrayList, new AdapterStaionSchedule.itemClickListener() {
+            @Override
+            public void onItemClick(ModelStaionSchedule modelStaionSchedule) {
+                Intent intent = new Intent(getApplicationContext(),SpecificStationSchedule.class);
+                String station = modelStaionSchedule.getTittle();
+                intent.putExtra("station",station);
+                startActivity(intent);
+            }
+        });
         recyclerstation.setAdapter(adapterStaionSchedule);
 
         firestore = FirebaseFirestore.getInstance();

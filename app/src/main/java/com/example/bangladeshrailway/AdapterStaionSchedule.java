@@ -1,5 +1,6 @@
 package com.example.bangladeshrailway;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,11 @@ import java.util.ArrayList;
 public class AdapterStaionSchedule extends RecyclerView.Adapter<AdapterStaionSchedule.Myviewholder>{
 
     ArrayList<ModelStaionSchedule> datalist;
-    public AdapterStaionSchedule(ArrayList<ModelStaionSchedule> datalist) {
+    private itemClickListener itemClickListener;
+
+    public AdapterStaionSchedule(ArrayList<ModelStaionSchedule> datalist,itemClickListener itemClickListener) {
         this.datalist = datalist;
+        this.itemClickListener=itemClickListener;
     }
 
     @NonNull
@@ -26,9 +30,20 @@ public class AdapterStaionSchedule extends RecyclerView.Adapter<AdapterStaionSch
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterStaionSchedule.Myviewholder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterStaionSchedule.Myviewholder holder, @SuppressLint("RecyclerView") int position) {
         holder.tittle.setText(datalist.get(position).getTittle());
         holder.trains.setText(datalist.get(position).getTrains());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClickListener.onItemClick(datalist.get(position));
+            }
+        });
+    }
+
+    public interface itemClickListener{
+        void onItemClick(ModelStaionSchedule modelStaionSchedule);
     }
 
     @Override
