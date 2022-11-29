@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,11 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -24,51 +23,39 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tickets extends Fragment {
+
+public class UpTrainFragment extends Fragment {
 
     FirebaseFirestore firestore;
-    ArrayList<ModelTicket> arrayList;
-    RecyclerView recycleticket;
-    AdapterTicket adapterTicket;
-    FirebaseAuth auth;
-    String logEmail;
+    ArrayList<ModelUpTrainFrag> arrayList;
+    RecyclerView recycletraindownfrag;
+    AdapterUpTrainFrag adapterUpTrainFrag;
+    String train;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+       View view = inflater.inflate(R.layout.fragment_up_train2, container, false);
+        train=getActivity().getIntent().getStringExtra("train");
 
-        View view = inflater.inflate(R.layout.fragment_tickets, container, false);
-
-        recycleticket=view.findViewById(R.id.ticketrecycle);
-        recycleticket.setHasFixedSize(true);
-        recycleticket.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recycletraindownfrag=view.findViewById(R.id.trainuprecycle);
+        recycletraindownfrag.setHasFixedSize(true);
+        recycletraindownfrag.setLayoutManager(new LinearLayoutManager(getActivity()));
         arrayList= new ArrayList<>();
-        adapterTicket = new AdapterTicket(arrayList, new AdapterTicket.itemClickListener() {
-            @Override
-            public void onItemClick(ModelTicket modelTicket) {
-                Toast.makeText(getActivity(), modelTicket.getPnr(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        recycleticket.setAdapter(adapterTicket);
-
-
-        auth= FirebaseAuth.getInstance();
-        if(auth.getCurrentUser()!=null){
-            logEmail=auth.getCurrentUser().getEmail();
-        }
+        adapterUpTrainFrag = new AdapterUpTrainFrag(arrayList);
+        recycletraindownfrag.setAdapter(adapterUpTrainFrag);
 
         firestore = FirebaseFirestore.getInstance();
-        firestore.collection("UserInfo").document(logEmail).collection("tickets").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        firestore.collection("Train").document(train).collection("up").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
                 for(DocumentSnapshot snapshot : list){
-                    ModelTicket modelTicket = snapshot.toObject(ModelTicket.class);
-                    arrayList.add(modelTicket);
+                    ModelUpTrainFrag modelUpTrainFrag = snapshot.toObject(ModelUpTrainFrag.class);
+                    arrayList.add(modelUpTrainFrag);
                 }
-                adapterTicket.notifyDataSetChanged();
+                adapterUpTrainFrag.notifyDataSetChanged();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -76,9 +63,6 @@ public class Tickets extends Fragment {
                 Toast.makeText(getActivity(), "Failed to load image", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
 
         return view;
     }

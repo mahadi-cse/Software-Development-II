@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -40,7 +41,15 @@ public class TrainTime extends AppCompatActivity {
         recyclertraintime.setLayoutManager(new LinearLayoutManager(this));
 
         arrayList= new ArrayList<>();
-        adapterTrainRecycle = new AdapterTrainRecycle(arrayList);
+        adapterTrainRecycle = new AdapterTrainRecycle(arrayList, new AdapterTrainRecycle.itemClickListener() {
+            @Override
+            public void onItemClick(ModelTrainRecycle modelTrainRecycle) {
+                Intent intent = new Intent(getApplicationContext(),SpecificTrainSchedule.class);
+                String train = modelTrainRecycle.getTittle();
+                intent.putExtra("train",train);
+                startActivity(intent);
+            }
+        });
         recyclertraintime.setAdapter(adapterTrainRecycle);
 
         firestore = FirebaseFirestore.getInstance();

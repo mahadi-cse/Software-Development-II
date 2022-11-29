@@ -108,6 +108,7 @@ public class BuyTickets extends AppCompatActivity  {
                     BuyTickets.this, (view, year1, month1, day1) -> {
                         month1 +=1;
                         String date = day1 +"-"+ month1 +"-"+ year1;
+                        intent.putExtra("date",date);
                         etDate.setText(date);
                     },year,month,day);
             long time = 777600000 ;
@@ -127,6 +128,7 @@ public class BuyTickets extends AppCompatActivity  {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String textClass = parent.getItemAtPosition(position).toString();
+                intent.putExtra("class",textClass);
 //                Toast.makeText(BuyTickets.this, textClass, Toast.LENGTH_SHORT).show();
             }
 

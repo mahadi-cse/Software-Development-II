@@ -10,5 +10,7 @@
     <color name="background_color">#FFFFFFFF</color>
     <color name="border_color">#4CAF50</color>
     <color name="gray">#C1C5C1</color>
+    <color name="coach">#F0CC60</color>
+    <color name="seatselect">#50FF12</color>
 
 </resources>

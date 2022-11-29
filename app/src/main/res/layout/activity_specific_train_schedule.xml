@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Track">
-
+    tools:context=".SpecificTrainSchedule">
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayout"
+        android:id="@+id/tablayoutTrain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -27,7 +26,7 @@
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/viewpager">
+        android:id="@+id/viewpagerTrain">
     </androidx.viewpager.widget.ViewPager>
 
 </RelativeLayout>

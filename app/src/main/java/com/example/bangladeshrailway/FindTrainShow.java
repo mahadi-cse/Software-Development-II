@@ -47,8 +47,28 @@ public class FindTrainShow extends AppCompatActivity {
         myAdapter=new MyAdapter(arrayList, new MyAdapter.itemClickListener() {
             @Override
             public void onItemClick(Model model) {
+                Intent intent = new Intent(getApplicationContext(),SeatSelcetion.class);
+
+                String From = model.getFrom();
+                String to = model.getTo();
+                String trainname = model.getName();
+                String deptTime=model.getDepartureTime();
+
+
+                String date = getIntent().getStringExtra("date");
+                String classp = getIntent().getStringExtra("class");
+                String price= model.getPrice(classp);
+
+                intent.putExtra("from",from);
+                intent.putExtra("to",to);
+                intent.putExtra("trainname",trainname);
+                intent.putExtra("date",date);
+                intent.putExtra("class",classp);
+                intent.putExtra("deptTime",deptTime);
+                intent.putExtra("price",price);
+
                 Toast.makeText(FindTrainShow.this, model.getName(), Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),SeatSelcetion.class));
+                startActivity(intent);
             }
         });
         recyclerView.setAdapter(myAdapter);

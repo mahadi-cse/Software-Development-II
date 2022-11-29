@@ -1,5 +1,6 @@
 package com.example.bangladeshrailway;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +16,14 @@ import java.util.ArrayList;
 
 public class AdapterTrainRecycle extends RecyclerView.Adapter<AdapterTrainRecycle.Myviewholder>{
 
-    ArrayList<ModelTrainRecycle> datalist;
+    private ArrayList<ModelTrainRecycle> datalist;
+    private itemClickListener itemClickListener;
 
-    public AdapterTrainRecycle(ArrayList<ModelTrainRecycle> datalist) {
+    public AdapterTrainRecycle(ArrayList<ModelTrainRecycle> datalist,itemClickListener itemClickListener) {
+
         this.datalist = datalist;
+        this.itemClickListener=itemClickListener;
+
     }
 
     @NonNull
@@ -29,13 +34,23 @@ public class AdapterTrainRecycle extends RecyclerView.Adapter<AdapterTrainRecycl
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterTrainRecycle.Myviewholder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterTrainRecycle.Myviewholder holder, @SuppressLint("RecyclerView") int position) {
 
        ModelTrainRecycle modelTrainRecycle = datalist.get(position);
         holder.tittle.setText(datalist.get(position).getTittle());
         holder.routes.setText(datalist.get(position).getRoute());
 
         Glide.with(holder.trainimageRecycle.getContext()).load(modelTrainRecycle.getUrl()).into(holder.trainimageRecycle);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClickListener.onItemClick(datalist.get(position));
+            }
+        });
+    }
+
+    public interface itemClickListener{
+        void onItemClick(ModelTrainRecycle modelTrainRecycle);
     }
 
     @Override

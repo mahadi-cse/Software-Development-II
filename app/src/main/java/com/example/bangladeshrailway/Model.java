@@ -1,5 +1,7 @@
 package com.example.bangladeshrailway;
 
+import java.util.Objects;
+
 public class Model {
     String From,Name,To,arraivalTime,counterAC_B,counterSHOVON,counterSNIGDHA,counterS_CHAIR,departureTime,onlineAC_B,
             onlineSHOVON,onlineSNIGDHA,onlineS_CHAIR,priceAC_B,priceSHOVON,priceSNIGDHA,priceS_CHAIR;
@@ -134,6 +136,17 @@ public class Model {
 
     public String getPriceS_CHAIR() {
         return priceS_CHAIR;
+    }
+
+    public String getPrice(String type) {
+        String price="";
+        if(Objects.equals(type, "S_CHAIR")){
+            price=priceS_CHAIR;
+        }
+        else if(Objects.equals(type, "SNIGDHA")){
+            price=priceSNIGDHA;
+        }
+        return price;
     }
 
     public void setPriceS_CHAIR(String priceS_CHAIR) {

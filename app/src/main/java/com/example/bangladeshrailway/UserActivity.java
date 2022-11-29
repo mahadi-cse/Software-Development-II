@@ -40,7 +40,6 @@ public class UserActivity extends Fragment implements View.OnClickListener{
         verifyTicket.setOnClickListener(this);
         refund.setOnClickListener(this);
 
-
         return view;
     }
 

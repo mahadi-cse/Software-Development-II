@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TicketConfrimed">
+
+
+    <ImageView
+        android:id="@+id/confrimed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_confrimed_foreground" />
+    <TextView
+        android:id="@+id/railway"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bangladesh Railway"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@id/confrimed"
+
+        />
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/railway"
+        android:id="@+id/a1"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_buy_ticket"
+
+        />
+    <TextView
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/railway"
+        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ticket Comfrimed"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/border_color"
+        android:layout_toEndOf="@+id/a1"
+        android:layout_centerVertical="true"
+        />
+
+    <Button
+        android:id="@+id/dashcheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check Dashborad"
+        android:layout_below="@id/a1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:drawableRight="@drawable/arrow_right"
+        />
+
+</RelativeLayout>

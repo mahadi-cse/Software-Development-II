@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SeatSelcetion">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <RelativeLayout
         android:id="@+id/relativeselsectraininfo"
@@ -16,20 +19,19 @@
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ekota Express (705)"
-            android:paddingStart="10dp"
+            android:text="@string/ekota_express_705"
             android:textStyle="bold"
             android:textSize="20sp"
-            />
+            tools:ignore="RtlSymmetry" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:id="@+id/departureselection"
-            android:text="Dhaka"
-            android:paddingLeft="10dp"
+            android:text="@string/dhaka"
+            android:paddingStart="10dp"
             android:layout_below="@id/trainnameselection"
-            />
+            tools:ignore="RtlSymmetry" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -43,20 +45,20 @@
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:id="@+id/arraiveselection"
-            android:text="Dinajpur"
+            android:text="@string/dinajpur"
             android:layout_below="@id/trainnameselection"
             android:paddingStart="330dp"
-            />
+            tools:ignore="RtlSymmetry" />
         <TextView
             android:id="@+id/deparaturetimeselection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/departureselection"
             android:layout_marginTop="10dp"
-            android:paddingStart="10dp"
-            android:text="11 Nov,20.20"
+            tools:ignore="RtlSymmetry"
+            android:text="@string/_11_nov_20_20"
             android:textColor="@color/black"
-            android:textSize="11dp" />
+            android:textSize="11sp" />
 
         <TextView
             android:id="@+id/arraivetimeselection"
@@ -65,82 +67,439 @@
             android:layout_below="@id/departureselection"
             android:layout_marginTop="10dp"
             android:paddingStart="330dp"
-            android:text="11 Nov,20.20"
+            android:text="@string/_11_nov_20_20"
             android:textColor="@color/black"
-            android:textSize="11dp" />
+            android:textSize="11sp"
+            tools:ignore="RtlSymmetry" />
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/leftseat"
-        android:layout_marginTop="20dp"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/relativeselsectraininfo">
+        <RelativeLayout
+            android:id="@+id/selectcoach"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeselsectraininfo">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/two"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="15dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="9dp">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_coach"
+                android:layout_marginStart="10dp"
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/back2">
+                />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:text="2"
-                    android:textColor="@color/white" />
-            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="100dp"
+                android:id="@+id/ka"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
 
-        </androidx.cardview.widget.CardView>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/ka"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
 
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="150dp"
+                android:id="@+id/KHA"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
 
-        <androidx.cardview.widget.CardView
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="70dp"
-            android:id="@+id/three"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="3"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/kha"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="200dp"
+                android:id="@+id/ga"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/ga"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="250dp"
+                android:id="@+id/gha"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/gha"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="300dp"
+                android:id="@+id/UMA"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/uma"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="350dp"
+                android:id="@+id/cha"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/cha"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:layout_marginTop="50dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="100dp"
+                android:id="@+id/scha"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/scha"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:layout_marginTop="50dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="150dp"
+                android:id="@+id/ja"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/ja"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:layout_marginTop="50dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="200dp"
+                android:id="@+id/jha"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/jha"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:layout_marginTop="50dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="250dp"
+                android:id="@+id/neo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/neo"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:layout_marginTop="50dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="300dp"
+                android:id="@+id/ta"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/ta"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="15dp"
+                android:clickable="true"
+                android:layout_marginTop="50dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="350dp"
+                android:id="@+id/tha"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/tha"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:layout_marginTop="120dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="350dp"
+                android:id="@+id/s_1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_1"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/leftseat"
+            android:layout_marginTop="15dp"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/selectcoach">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/s_2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/gray"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="9dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     >
-                </TextView>
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_2"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
 
-        </androidx.cardview.widget.CardView> <androidx.cardview.widget.CardView
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_3"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView> <androidx.cardview.widget.CardView
             app:cardCornerRadius="9dp"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
             android:layout_marginStart="130dp"
-            android:id="@+id/four"
+            android:id="@+id/s_4"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            app:cardBackgroundColor="@color/gray"
             android:focusable="true">
             <RelativeLayout
-                android:background="@drawable/back2"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -154,757 +513,2517 @@
 
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/seven"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/s_7"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/gray"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="9dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_7"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/s_8"
+                android:layout_width="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:layout_height="40dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="9dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_8"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/s_9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/gray"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="9dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_9"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--         Seat No 12-->
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="100dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_12"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_12"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="100dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_13"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_13"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="100dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_14"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_14"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="150dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_17"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="TooManyViews">
+                    <TextView
+                        android:text="@string/_17"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="150dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_18"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_18"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="150dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_19"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_19"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        Seat 22-->
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="200dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_22"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_22"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="200dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_23"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_23"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="200dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_24"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_24"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 27-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="250dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_27"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_27"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="250dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_28"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_28"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="250dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_29"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_29"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        Seat 32-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="300dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_32"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_32"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="300dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_33"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_33"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="300dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_34"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_34"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 37-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="350dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_37"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_37"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="350dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_38"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_37"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="350dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_39"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/gray"
+                tools:ignore="TooManyViews">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_39"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 42-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="400dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_42"
+                app:cardBackgroundColor="@color/white"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_42"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="400dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_43"
+                android:layout_width="40dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_height="40dp"
+                android:focusable="true">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_43"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="400dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_44"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_44"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--        seat 47-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="450dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_47"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_47"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="450dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_48"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_48"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="450dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_49"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_49"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 52-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="500dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_52"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_52"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="500dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_53"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_53"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="500dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_54"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_54"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 57-->
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="550dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_57"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_57"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="550dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_58"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_58"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="550dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_59"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_59"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--        seat 62-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="600dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_62"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_62"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="600dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_63"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_63"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="600dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_64"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_64"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 67-->
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="650dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_67"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_67"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="650dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_68"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_68"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="650dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_69"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_69"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--        seat 72-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="700dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_72"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_72"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="700dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_73"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_73"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="700dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_74"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_74"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--        seat 77-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="750dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_77"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_77"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="750dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_78"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_78"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="750dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_79"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_79"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 82-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="800dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_82"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_82"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="800dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_83"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_83"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="800dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_84"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_84"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 87-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="850dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="15dp"
+                android:id="@+id/s_87"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_87"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="850dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="70dp"
+                android:id="@+id/s_88"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_88"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="850dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_89"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_89"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rightseat"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/selectcoach">
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_5"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView> <androidx.cardview.widget.CardView
+            app:cardCornerRadius="9dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginStart="130dp"
+            android:id="@+id/s_6"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="50dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="9dp">
-
+            app:cardBackgroundColor="@color/gray"
+            android:focusable="true">
             <RelativeLayout
+
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/back2">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="@string/_7"
+                    android:text="@string/_6"
                     android:textColor="@color/white" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/eight"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="50dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="9dp">
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_10"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/back2">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_10"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@string/_8"
-                    android:textColor="@color/white" />
-            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_11"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/nine"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="130dp"
-            android:layout_marginTop="50dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="9dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_11"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/back2">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="9"
-                    android:textColor="@color/white" />
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-<!--         Seat No 12-->
-
-        <androidx.cardview.widget.CardView
-           android:layout_marginTop="100dp"
-           app:cardCornerRadius="9dp"
-           android:clickable="true"
-           android:foreground="?android:attr/selectableItemBackground"
-           android:layout_marginStart="15dp"
-           android:id="@+id/twelev"
-           android:layout_width="40dp"
-           android:layout_height="40dp"
-           android:focusable="true">
-           <RelativeLayout
-               android:background="@drawable/back2"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent">
-               <TextView
-                   android:text="12"
-                   android:textColor="@color/white"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_centerVertical="true"
-                   android:layout_centerHorizontal="true"
-                   >
-               </TextView>
-           </RelativeLayout>
-
-       </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="100dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_15"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="100dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="70dp"
-            android:id="@+id/thirteen"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="13"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_15"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
 
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="100dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="130dp"
-            android:id="@+id/fourteen"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="14"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="100dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_16"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
 
-        </androidx.cardview.widget.CardView>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_16"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="150dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="15dp"
-            android:id="@+id/seventeen"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="17"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
+            <!--        Seat 20-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="200dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_25"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_25"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="200dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_26"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_26"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        Seat 25-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="150dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_20"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_20"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="150dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_21"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_21"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        Seat 30-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="300dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_35"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_35"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="250dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_31"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_31"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 35-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="250dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_30"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_30"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="300dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_36"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_36"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
 
 
+            <!--        seat 40-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="350dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_40"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="150dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="70dp"
-            android:id="@+id/eighteen"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="18"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_40"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
 
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="150dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="130dp"
-            android:id="@+id/nineteen"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="19"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="350dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_41"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
 
-        </androidx.cardview.widget.CardView>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_41"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
 
-<!--        Seat 22-->
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="200dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="15dp"
-            android:id="@+id/s_22"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="22"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
+            <!--        seat 45-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="400dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_45"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
 
-        </androidx.cardview.widget.CardView>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_45"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
 
+            </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="400dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_46"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="200dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="70dp"
-            android:id="@+id/s_23"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="23"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_46"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
 
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="200dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="130dp"
-            android:id="@+id/s_24"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="24"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
+            <!--        seat 50-->
 
-        </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="450dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_50"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
 
-<!--        seat 27-->
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="250dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="15dp"
-            android:id="@+id/s_27"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="27"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_50"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
 
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="450dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_51"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
 
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_51"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="250dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="70dp"
-            android:id="@+id/s_28"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="28"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="500dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_55"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="250dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="130dp"
-            android:id="@+id/s_29"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="29"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_55"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
 
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="500dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_56"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_56"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 60-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="550dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_60"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_60"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="550dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_61"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_61"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 65-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="600dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_65"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_65"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="600dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_66"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_66"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--        seat 70-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="650dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_70"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_70"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="650dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_71"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_71"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 75-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="700dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_75"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_75"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="700dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_76"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_76"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--        seat 80-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="750dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_80"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_80"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="750dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_81"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_81"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 85-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="800dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_85"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_85"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="800dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_86"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_86"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--        seat 90-->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="850dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="65dp"
+                android:id="@+id/s_90"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_90"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="850dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_91"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_91"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="900dp"
+                app:cardCornerRadius="9dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginStart="130dp"
+                android:id="@+id/s_92"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardBackgroundColor="@color/gray"
+                android:focusable="true">
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/_92"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                    </TextView>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/continuebtn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/continuebtn"
+            android:layout_below="@id/leftseat"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            />
+
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/rightseat"
-        android:layout_marginLeft="220dp"
-        android:layout_marginTop="20dp"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/relativeselsectraininfo">
-
-        <androidx.cardview.widget.CardView
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="65dp"
-            android:id="@+id/five"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="5"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView> <androidx.cardview.widget.CardView
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="130dp"
-            android:id="@+id/six"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="6"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="50dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="65dp"
-            android:id="@+id/ten"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="10"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="50dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="130dp"
-            android:id="@+id/eleven"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="11"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="100dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="65dp"
-            android:id="@+id/fifteen"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="15"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="100dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="130dp"
-            android:id="@+id/sixteen"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="16"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-<!--        Seat 20-->
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="200dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="65dp"
-            android:id="@+id/s_25"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="25"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="200dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="130dp"
-            android:id="@+id/s_26"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="26"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-<!--        Seat 25-->
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="150dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="65dp"
-            android:id="@+id/s_20"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="20"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="150dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="130dp"
-            android:id="@+id/s_21"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="21"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-<!--        Seat 30-->
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="250dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="65dp"
-            android:id="@+id/s_30"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="30"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="250dp"
-            app:cardCornerRadius="9dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginStart="130dp"
-            android:id="@+id/s_31"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:focusable="true">
-            <RelativeLayout
-                android:background="@drawable/back2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:text="31"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    >
-                </TextView>
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-    </RelativeLayout>
-
-
-</RelativeLayout>
+</ScrollView>
