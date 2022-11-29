@@ -4,13 +4,11 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -23,51 +21,39 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-public class DownTrain extends Fragment {
+
+public class DownTrainTrack extends Fragment {
 
     FirebaseFirestore firestore;
-    ArrayList<ModelUpTrain> arrayList;
-    RecyclerView recyclerdowntrain;
-    AdapterUpTrainStation adapterdowntrain;
-    String station;
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            requireActivity().finish();
-        }
-        return super.onOptionsItemSelected(item);
-    }
+    ArrayList<ModelTrack> arrayList;
+    RecyclerView recyclerdontrack;
+    AdapterDownTrainTrack adapterDownTrainTrack;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_down_train, container, false);
-        recyclerdowntrain=view.findViewById(R.id.Downcontainterspecificstaion);
-        station=getActivity().getIntent().getStringExtra("station");
+        View view = inflater.inflate(R.layout.fragment_down_train_track, container, false);
 
-        ((SpecificStationSchedule) getActivity()).setTitle(station);
-        Objects.requireNonNull(((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        Objects.requireNonNull(((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowHomeEnabled(true);
+        recyclerdontrack=view.findViewById(R.id.recycle_down_track);
 
-        recyclerdowntrain.setHasFixedSize(true);
-        recyclerdowntrain.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerdontrack.setHasFixedSize(true);
+        recyclerdontrack.setLayoutManager(new LinearLayoutManager(getActivity()));
         arrayList= new ArrayList<>();
-        adapterdowntrain = new AdapterUpTrainStation(arrayList);
-        recyclerdowntrain.setAdapter(adapterdowntrain);
+        adapterDownTrainTrack = new AdapterDownTrainTrack(arrayList);
+        recyclerdontrack.setAdapter(adapterDownTrainTrack);
 
         firestore = FirebaseFirestore.getInstance();
-        firestore.collection("SourceDes").document(station).collection("down").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        firestore.collection("Down").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
                 for(DocumentSnapshot snapshot : list){
-                    ModelUpTrain modelUpTrain = snapshot.toObject(ModelUpTrain.class);
-                    arrayList.add(modelUpTrain);
+                    ModelTrack modelTrack = snapshot.toObject(ModelTrack.class);
+                    arrayList.add(modelTrack);
                 }
-                adapterdowntrain.notifyDataSetChanged();
+                adapterDownTrainTrack.notifyDataSetChanged();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

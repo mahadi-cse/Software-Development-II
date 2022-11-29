@@ -153,6 +153,9 @@
     <string name="neo">NEO</string>
     <string name="ta">TA</string>
     <string name="tha">THA</string>
+    <string name="description">Your request to book e-ticket for your journey in Bangladesh Railway was successful. Your ticket was booked in your originating station (the station you mentioned as</string>
+    <string name="heading">This Ticket will be valid on production of Photo Identity Card of the Passenger.</string>
+    <string name="printinfo">(*) If you purchased e-ticket for your own travel, print copy of email is sufficient to travel. You don’t need to print out any hard copy of ticket from station. But please make sure to bring along valid photo identity. .</string>
     <string-array name="class_spinner">
         <item>Select Class</item>
         <item>AC_B</item>

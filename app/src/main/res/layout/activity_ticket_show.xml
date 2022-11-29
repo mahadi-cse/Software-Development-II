@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".TicketShow">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="570dp"
+            android:layout_height="760dp">
+
+            <RelativeLayout
+                android:background="@color/white"
+                android:id="@+id/relativeforticket"
+                android:layout_width="match_parent"
+                android:layout_height="760dp">
+
+                <RelativeLayout
+                    android:background="@drawable/backforticket"
+                    android:layout_width="570dp"
+                    android:layout_height="760dp"
+                    android:layout_margin="16dp">
+                    <TextView
+                        android:id="@+id/a1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:text="Bangladesh Railway"
+                        android:textColor="@color/ticketheading"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/dear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/a1"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Dear Mahadi," />
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="380dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dear"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/description" />
+
+                    <ImageView
+                        android:id="@+id/qrCode"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_below="@+id/dear"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@id/description"
+                        android:src="@drawable/qr" />
+
+                    <TextView
+                        android:id="@+id/headingbold"
+                        android:layout_width="match_parent"
+                        android:layout_margin="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/description"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/heading"
+                        android:textSize="11sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TableLayout
+                        android:id="@+id/table"
+                        android:layout_margin="10dp"
+                        android:layout_below="@id/headingbold"
+                        android:layout_width="550dp"
+                        android:layout_height="wrap_content">
+                        <TableRow
+                            android:background="@color/coach">
+
+                            <TextView
+                                android:layout_height="30dp"
+                                android:id="@+id/j1"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="20sp"
+                                android:text="Journey Information"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                        </TableRow>
+
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/currentini"
+                                android:text="Issue Date &amp; Time"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/currentorissu"
+                                android:text="20-SEP-2021 22:52"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j2"
+                                android:text="Journey Date and Departure Time"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/jpurnydate"
+                                android:text="22-SEP-2021 15:35"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j4"
+                                android:text="Train Number and Name"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/trainname"
+                                android:text="Panchagarh Express(794)"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j3"
+                                android:text="Originating Station (From Station)"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/from"
+                                android:text="Parbatipur"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j5"
+                                android:text="Destination Station (To Station)"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/to"
+                                android:text="Dhaka"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j6"
+                                android:text="Class Name"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/classname"
+                                android:text="S_CHAIR"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j7"
+                                android:text="Coach Name"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/coachname"
+                                android:text="THA"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j8"
+                                android:text="Seat Range"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/seat"
+                                android:text="43"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j9"
+                                android:text="Number of Seats"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/seatcount"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j10"
+                                android:text="Fare"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/price"
+                                android:text="440 BDT"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j11"
+                                android:text="Vat"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/vat"
+                                android:text="0 BDT"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j12"
+                                android:text="Total"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/totalprice"
+                                android:text="440 BDT"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/coach">
+
+                            <TextView
+                                android:id="@+id/j13"
+                                android:layout_height="30dp"
+                                android:text="Ticket Printing Information"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="20sp"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j14"
+                                android:text="Phone"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/phone"
+                                android:text="01797716335"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j15"
+                                android:text="PNR"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/pnr"
+                                android:text="v4641354"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/coach">
+
+                            <TextView
+                                android:id="@+id/j16"
+                                android:layout_height="30dp"
+                                android:text="Passenger Information"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="20sp"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j17"
+                                android:text="Name"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/name"
+                                android:text="S M Mahadi Hasan"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j18"
+                                android:text="NID"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/nid"
+                                android:text="v4641354"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="100dp"
+                                />
+
+                        </TableRow>
+                    </TableLayout>
+
+                    <TextView
+                        android:id="@+id/ticketprintfddes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/table"
+                        android:textSize="10dp"
+                        android:text="@string/printinfo"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ticketprintfddes"
+                        android:text="Thank you"
+                        android:id="@+id/thank"
+                        android:layout_marginStart="10dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/thank"
+                        android:text="BANGLADESH RAILWAY"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="10dp"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativeforticket"
+                android:layout_centerHorizontal="true"
+                android:text="Download Ticket"
+                android:id="@+id/downloadticket"
+                />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+  </HorizontalScrollView>

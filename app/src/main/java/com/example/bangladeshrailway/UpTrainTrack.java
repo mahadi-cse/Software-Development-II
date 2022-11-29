@@ -23,39 +23,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class UpTrain extends Fragment {
+public class UpTrainTrack extends Fragment {
 
     FirebaseFirestore firestore;
-    ArrayList<ModelUpTrain> arrayList;
-    RecyclerView recycleruptrain;
-    AdapterUpTrainStation adapterUpTrain;
-    String station;
+    ArrayList<ModelTrack> arrayList;
+    RecyclerView recycleuptraintrack;
+    AdapterUpTrainTrack adapterUpTrainTrack;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_up_train, container, false);
 
-        recycleruptrain=view.findViewById(R.id.UPcontainterspecificstaion);
-        station=getActivity().getIntent().getStringExtra("station");
+        View view = inflater.inflate(R.layout.fragment_up_train_track, container, false);
 
-        recycleruptrain.setHasFixedSize(true);
-        recycleruptrain.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        recycleuptraintrack=view.findViewById(R.id.recycle_up_track);
+
+
+        recycleuptraintrack.setHasFixedSize(true);
+        recycleuptraintrack.setLayoutManager(new LinearLayoutManager(getActivity()));
         arrayList= new ArrayList<>();
-        adapterUpTrain = new AdapterUpTrainStation(arrayList);
-        recycleruptrain.setAdapter(adapterUpTrain);
+        adapterUpTrainTrack = new AdapterUpTrainTrack(arrayList);
+        recycleuptraintrack.setAdapter(adapterUpTrainTrack);
 
         firestore = FirebaseFirestore.getInstance();
-        firestore.collection("SourceDes").document(station).collection("up").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        firestore.collection("Up").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
                 for(DocumentSnapshot snapshot : list){
-                    ModelUpTrain modelUpTrain = snapshot.toObject(ModelUpTrain.class);
-                    arrayList.add(modelUpTrain);
+                    ModelTrack modelTrack = snapshot.toObject(ModelTrack.class);
+                    arrayList.add(modelTrack);
                 }
-                adapterUpTrain.notifyDataSetChanged();
+                adapterUpTrainTrack.notifyDataSetChanged();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -63,6 +64,8 @@ public class UpTrain extends Fragment {
                 Toast.makeText(getActivity(), "Failed to load image", Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
         return view;
     }

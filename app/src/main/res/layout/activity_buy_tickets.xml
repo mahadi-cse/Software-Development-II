@@ -162,14 +162,13 @@
    </RelativeLayout>
 
     <Button
+        android:id="@+id/sub_find_train"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/sub_find_train"
-        android:text="@string/find_train"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/relative_person"
-        />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/find_train" />
 </RelativeLayout>
 
 

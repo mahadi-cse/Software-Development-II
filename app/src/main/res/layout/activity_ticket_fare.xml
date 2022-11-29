@@ -1,9 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TicketFare">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeprice">
+
+        <TableLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:background="@color/border_color">
+                <TextView
+                    android:text="Class"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20dp"
+                    />
+                <TextView
+                    android:text="Price"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="20dp"
+                    />
+            </TableRow>
+            <TableRow
+                android:background="@color/coach">
+                <TextView
+                    android:text="AC_B"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:text="1775 BDT"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="15dp"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:background="@color/coach">
+                <TextView
+                    android:text="AC_S"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:text="1375 BDT"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="15dp"
+                    />
+            </TableRow>
+            <TableRow
+                android:background="@color/coach">
+                <TextView
+                    android:text="SNIGDHA"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:text="975 BDT"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="15dp"
+                    />
+            </TableRow>
+            <TableRow
+                android:background="@color/coach">
+                <TextView
+                    android:text="S_CHAIR"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:text="465 BDT"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="15dp"
+                    />
+            </TableRow>
+            <TableRow
+                android:background="@color/coach">
+                <TextView
+                    android:text="SHOVON"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:text="360 BDT"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="15dp"
+                    />
+            </TableRow>
+
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativesearch"
+        android:layout_below="@+id/relativeprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:id="@+id/from"
+            android:layout_marginTop="50dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/from_des"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="70dp"
+                android:autofillHints=""
+                android:drawableStart="@drawable/ic_source"
+                android:drawablePadding="16dp"
+                android:paddingStart="16dp"
+                android:hint="@string/from"
+                android:completionThreshold="0"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                tools:ignore="RtlSymmetry" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_marginTop="20dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/from"
+            android:id="@+id/to"
+
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/to_des"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:drawableStart="@drawable/ic_des"
+                android:drawablePadding="16dp"
+                android:hint="@string/To"
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:completionThreshold="0"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:autofillHints=""
+                tools:ignore="RtlSymmetry" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/sub_find_train"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/to"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Ticket Price" />
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

@@ -3,7 +3,6 @@ package com.example.bangladeshrailway;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,23 +10,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapterUpTrain extends RecyclerView.Adapter<AdapterUpTrain.Myviewholder>{
-
+public class AdapterDownTrainStation extends RecyclerView.Adapter<AdapterDownTrainStation.Myviewholder> {
     ArrayList<ModelUpTrain> datalist;
 
-    public AdapterUpTrain(ArrayList<ModelUpTrain> datalist) {
+    public AdapterDownTrainStation(ArrayList<ModelUpTrain> datalist) {
         this.datalist = datalist;
     }
 
     @NonNull
     @Override
-    public AdapterUpTrain.Myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_specific_station_up,parent,false);
-        return new AdapterUpTrain.Myviewholder(view);
+    public AdapterDownTrainStation.Myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_specific_down,parent,false);
+        return new AdapterDownTrainStation.Myviewholder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterUpTrain.Myviewholder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterDownTrainStation.Myviewholder holder, int position) {
         holder.name.setText(datalist.get(position).getName());
         holder.in.setText(datalist.get(position).getIn());
         holder.out.setText(datalist.get(position).getOut());

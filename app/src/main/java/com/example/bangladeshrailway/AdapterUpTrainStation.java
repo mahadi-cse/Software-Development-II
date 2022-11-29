@@ -10,22 +10,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapterDownTrain extends RecyclerView.Adapter<AdapterDownTrain.Myviewholder> {
+public class AdapterUpTrainStation extends RecyclerView.Adapter<AdapterUpTrainStation.Myviewholder>{
+
     ArrayList<ModelUpTrain> datalist;
 
-    public AdapterDownTrain(ArrayList<ModelUpTrain> datalist) {
+    public AdapterUpTrainStation(ArrayList<ModelUpTrain> datalist) {
         this.datalist = datalist;
     }
 
     @NonNull
     @Override
-    public AdapterDownTrain.Myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_specific_down,parent,false);
-        return new AdapterDownTrain.Myviewholder(view);
+    public AdapterUpTrainStation.Myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_specific_station_up,parent,false);
+        return new AdapterUpTrainStation.Myviewholder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterDownTrain.Myviewholder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterUpTrainStation.Myviewholder holder, int position) {
         holder.name.setText(datalist.get(position).getName());
         holder.in.setText(datalist.get(position).getIn());
         holder.out.setText(datalist.get(position).getOut());

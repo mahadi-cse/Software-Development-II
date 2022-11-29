@@ -1,6 +1,7 @@
 package com.example.bangladeshrailway;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -48,6 +49,8 @@ public class Tickets extends Fragment {
             @Override
             public void onItemClick(ModelTicket modelTicket) {
                 Toast.makeText(getActivity(), modelTicket.getPnr(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(),TicketShow.class);
+                startActivity(intent);
             }
         });
         recycleticket.setAdapter(adapterTicket);

@@ -8,7 +8,7 @@
 
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayout"
+        android:id="@+id/tablayouttrack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -27,7 +27,7 @@
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/viewpager">
+        android:id="@+id/viewpagertrack">
     </androidx.viewpager.widget.ViewPager>
 
 </RelativeLayout>

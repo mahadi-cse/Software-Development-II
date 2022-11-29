@@ -8,9 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_color">#FFFFFFFF</color>
-    <color name="border_color">#4CAF50</color>
+    <color name="border_color">#3A9C3F</color>
     <color name="gray">#C1C5C1</color>
     <color name="coach">#F0CC60</color>
     <color name="seatselect">#50FF12</color>
+    <color name="ticketheading">#27A3A3</color>
+
 
 </resources>

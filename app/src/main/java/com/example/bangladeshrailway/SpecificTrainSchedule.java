@@ -12,6 +12,7 @@ public class SpecificTrainSchedule extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
