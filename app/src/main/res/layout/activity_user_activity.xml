@@ -17,6 +17,8 @@
             android:layout_height="250dp">
 
             <ImageView
+
+                android:layout_marginTop="-14dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/todo"

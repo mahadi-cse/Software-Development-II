@@ -6,6 +6,271 @@
     android:layout_height="match_parent"
     tools:context=".VerifyTicket">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:background="@color/white"
+                android:id="@+id/relativeforticket"
+                android:layout_width="match_parent"
+                android:layout_height="760dp">
+
+
+                <EditText
+                    android:background="@drawable/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:hint="Enter PNR"
+                    android:id="@+id/etpnr"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:ems="12"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <Button
+                    android:layout_below="@id/etpnr"
+                    android:text="Verfity Ticket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/submitbutton"
+                    android:layout_centerHorizontal="true"
+                    />
+
+                <RelativeLayout
+                    android:layout_below="@+id/submitbutton"
+                    android:background="@drawable/backforticket"
+                    android:layout_width="570dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp">
+
+                    <TableLayout
+                        android:id="@+id/table"
+                        android:layout_margin="10dp"
+                        android:layout_width="550dp"
+                        android:layout_height="wrap_content">
+                        <TableRow
+                            android:background="@color/coach">
+
+                            <TextView
+                                android:layout_height="30dp"
+                                android:id="@+id/j1"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="20sp"
+                                android:text="Journey Information"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                        </TableRow>
+
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/currentini"
+                                android:text="Issue Date &amp; Time"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/currentorissu"
+                                android:text="20-SEP-2021 22:52"
+                                android:textColor="@color/white"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j2"
+                                android:text="Journey Date"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/jpurnydate"
+                                android:text="22-SEP-2021 15:35"
+                                android:textColor="@color/black"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j4"
+                                android:text="Train Name"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/trainname"
+                                android:text="Panchagarh Express(794)"
+                                android:textColor="@color/white"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j3"
+                                android:text="From Station"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/from"
+                                android:text="Parbatipur"
+                                android:textColor="@color/black"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j5"
+                                android:text="To Station"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/to"
+                                android:text="Dhaka"
+                                android:textColor="@color/white"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j6"
+                                android:text="Class Name"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/classname"
+                                android:text="S_CHAIR"
+                                android:textColor="@color/black"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j7"
+                                android:text="Coach Name"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/coachname"
+                                android:text="THA"
+                                android:textColor="@color/white"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j8"
+                                android:text="Seat Range"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/seat"
+                                android:text="43"
+                                android:textColor="@color/black"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j9"
+                                android:text="Number of Seats"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/seatcount"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j10"
+                                android:text="Fare"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/price"
+                                android:text="440 BDT"
+                                android:textColor="@color/black"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/gray">
+
+                            <TextView
+                                android:id="@+id/j11"
+                                android:text="Vat"
+                                android:textColor="@color/white"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/vat"
+                                android:text="0 BDT"
+                                android:textColor="@color/white"
+                                />
+
+                        </TableRow>
+                        <TableRow
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/j12"
+                                android:text="Total"
+                                android:textColor="@color/black"
+                                android:layout_marginStart="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/totalprice"
+                                android:text="440 BDT"
+                                android:textColor="@color/black"
+                                />
+
+                        </TableRow>
+
+                    </TableLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
 
 
 </ScrollView>

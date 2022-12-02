@@ -22,7 +22,7 @@
     <string name="todo">TODO</string>
     <string name="buy_tickets">Buy Tickets</string>
     <string name="ticket_fare">Ticket Fare</string>
-    <string name="train_routes">Train Routes</string>
+    <string name="train_routes">Route Map</string>
     <string name="coach_view">Coach View</string>
     <string name="train_list">Train List</string>
     <string name="station_schedule">Station Schedule</string>
