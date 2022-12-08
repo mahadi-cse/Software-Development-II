@@ -1,5 +1,6 @@
 package com.example.bangladeshrailway;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,10 @@ import java.util.ArrayList;
 public class AdapterUpTrainTrack extends  RecyclerView.Adapter<AdapterUpTrainTrack.Myviewholder> {
 
     ArrayList<ModelTrack> datalist;
+    private itemClickListener itemClickListener;
 
-    public AdapterUpTrainTrack(ArrayList<ModelTrack> datalist) {
+    public AdapterUpTrainTrack(ArrayList<ModelTrack> datalist,itemClickListener itemClickListener ) {
+        this.itemClickListener=itemClickListener;
         this.datalist = datalist;
     }
 
@@ -26,15 +29,27 @@ public class AdapterUpTrainTrack extends  RecyclerView.Adapter<AdapterUpTrainTra
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterUpTrainTrack.Myviewholder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterUpTrainTrack.Myviewholder holder, @SuppressLint("RecyclerView") int position) {
         holder.tittle.setText(datalist.get(position).getTittle());
         holder.route.setText(datalist.get(position).getRoute());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClickListener.onItemClick(datalist.get(position));
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return datalist.size();
     }
+
+    public interface itemClickListener{
+        void onItemClick(ModelTrack modelTrack);
+    }
+
 
     class Myviewholder extends RecyclerView.ViewHolder{
 

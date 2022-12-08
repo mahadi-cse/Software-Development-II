@@ -54,6 +54,7 @@ public class BuyTickets extends AppCompatActivity  {
         etDate = findViewById(R.id.date);
         from=findViewById(R.id.from_des);
         to=findViewById(R.id.to_des);
+
        Intent intent = new Intent(BuyTickets.this,FindTrainShow.class);
 
         etDate.setGravity(Gravity.CENTER_VERTICAL );
@@ -129,12 +130,9 @@ public class BuyTickets extends AppCompatActivity  {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String textClass = parent.getItemAtPosition(position).toString();
                 intent.putExtra("class",textClass);
-//                Toast.makeText(BuyTickets.this, textClass, Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
 

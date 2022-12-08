@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -52,23 +53,20 @@ public class UserInfo extends Fragment {
         progressDialog.setMessage("Getting User Data...");
         progressDialog.show();
         firestore=FirebaseFirestore.getInstance();
-        firestore.collection("UserInfo").document(logEmail).get().addOnCompleteListener(task -> {
-            DocumentSnapshot documentSnapshot = task.getResult();
-            if(documentSnapshot!=null && documentSnapshot.exists()){
-            s_name=documentSnapshot.getString("name");
-            s_nid=documentSnapshot.getString("nid");
-            s_phone=documentSnapshot.getString("phone");
-            s_email=documentSnapshot.getString("email");
+        firestore.collection("UserInfo").document(logEmail).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-            name.setText("Name : "+s_name);
-            email.setText("Email  : "+s_email);
-            nid.setText("NID : "+s_nid);
-            phone.setText("Phone : "+s_phone);
+                ModelUser modelUser = documentSnapshot.toObject(ModelUser.class);
+
+                name.setText("Name : "+modelUser.getName());
+                email.setText("Email  : "+modelUser.getEmail());
+                nid.setText("NID : "+modelUser.getNid());
+                phone.setText("Phone : "+modelUser.getPhone());
                 if (progressDialog.isShowing())
                     progressDialog.dismiss();
-
             }
-        }).addOnFailureListener(e -> Toast.makeText(getActivity(), "Error"+e.getMessage(), Toast.LENGTH_SHORT).show());
+        });
         return view;
     }
 }

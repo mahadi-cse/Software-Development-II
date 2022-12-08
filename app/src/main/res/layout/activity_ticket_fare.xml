@@ -9,117 +9,7 @@
 
     <RelativeLayout
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/relativeprice">
-
-        <TableLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content">
-
-            <TableRow
-                android:background="@color/border_color">
-                <TextView
-                    android:text="Class"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="10dp"
-                    android:textSize="20dp"
-                    />
-                <TextView
-                    android:text="Price"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="80dp"
-                    android:textSize="20dp"
-                    />
-            </TableRow>
-            <TableRow
-                android:background="@color/coach">
-                <TextView
-                    android:text="AC_B"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="10dp"
-                    android:textSize="15dp"
-                    />
-                <TextView
-                    android:text="1775 BDT"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="80dp"
-                    android:textSize="15dp"
-                    />
-            </TableRow>
-
-            <TableRow
-                android:background="@color/coach">
-                <TextView
-                    android:text="AC_S"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="10dp"
-                    android:textSize="15dp"
-                    />
-                <TextView
-                    android:text="1375 BDT"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="80dp"
-                    android:textSize="15dp"
-                    />
-            </TableRow>
-            <TableRow
-                android:background="@color/coach">
-                <TextView
-                    android:text="SNIGDHA"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="10dp"
-                    android:textSize="15dp"
-                    />
-                <TextView
-                    android:text="975 BDT"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="80dp"
-                    android:textSize="15dp"
-                    />
-            </TableRow>
-            <TableRow
-                android:background="@color/coach">
-                <TextView
-                    android:text="S_CHAIR"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="10dp"
-                    android:textSize="15dp"
-                    />
-                <TextView
-                    android:text="465 BDT"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="80dp"
-                    android:textSize="15dp"
-                    />
-            </TableRow>
-            <TableRow
-                android:background="@color/coach">
-                <TextView
-                    android:text="SHOVON"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="10dp"
-                    android:textSize="15dp"
-                    />
-                <TextView
-                    android:text="360 BDT"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="80dp"
-                    android:textSize="15dp"
-                    />
-            </TableRow>
-
-
-        </TableLayout>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_centerHorizontal="true"
         android:id="@+id/relativesearch"
-        android:layout_below="@+id/relativeprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputLayout
@@ -178,6 +68,7 @@
                 tools:ignore="RtlSymmetry" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/sub_find_train"
             android:layout_width="wrap_content"

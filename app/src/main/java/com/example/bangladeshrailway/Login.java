@@ -59,6 +59,8 @@ public class Login extends Fragment {
     }
     else{
         Toast.makeText(getActivity(), "Login Failed", Toast.LENGTH_SHORT).show();
+        if (progressDialog.isShowing())
+            progressDialog.dismiss();
     }
     });
     }

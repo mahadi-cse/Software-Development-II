@@ -1,6 +1,8 @@
 package com.example.bangladeshrailway;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -29,6 +31,7 @@ public class DownTrainTrack extends Fragment {
     ArrayList<ModelTrack> arrayList;
     RecyclerView recyclerdontrack;
     AdapterDownTrainTrack adapterDownTrainTrack;
+    public String code;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,7 +43,15 @@ public class DownTrainTrack extends Fragment {
         recyclerdontrack.setHasFixedSize(true);
         recyclerdontrack.setLayoutManager(new LinearLayoutManager(getActivity()));
         arrayList= new ArrayList<>();
-        adapterDownTrainTrack = new AdapterDownTrainTrack(arrayList);
+        adapterDownTrainTrack = new AdapterDownTrainTrack(arrayList, new AdapterDownTrainTrack.itemClickListener() {
+            @Override
+            public void onItemClick(ModelTrack modelTrack) {
+                code="TR "+modelTrack.getCode();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms","16318",null));
+                intent.putExtra("sms_body",code);
+                startActivity(intent);
+            }
+        });
         recyclerdontrack.setAdapter(adapterDownTrainTrack);
 
         firestore = FirebaseFirestore.getInstance();

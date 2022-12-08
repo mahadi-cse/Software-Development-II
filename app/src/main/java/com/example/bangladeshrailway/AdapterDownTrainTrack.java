@@ -13,8 +13,10 @@ import java.util.ArrayList;
 public class AdapterDownTrainTrack extends  RecyclerView.Adapter<AdapterDownTrainTrack.Myviewholder> {
 
     ArrayList<ModelTrack> datalist;
+    private itemClickListener itemClickListener;
 
-    public AdapterDownTrainTrack(ArrayList<ModelTrack> datalist) {
+    public AdapterDownTrainTrack(ArrayList<ModelTrack> datalist,itemClickListener itemClickListener) {
+        this.itemClickListener=itemClickListener;
         this.datalist = datalist;
     }
 
@@ -29,6 +31,16 @@ public class AdapterDownTrainTrack extends  RecyclerView.Adapter<AdapterDownTrai
     public void onBindViewHolder(@NonNull AdapterDownTrainTrack.Myviewholder holder, int position) {
         holder.tittle.setText(datalist.get(position).getTittle());
         holder.route.setText(datalist.get(position).getRoute());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClickListener.onItemClick(datalist.get(position));
+            }
+        });
+    }
+
+    public interface itemClickListener{
+        void onItemClick(ModelTrack modelTrack);
     }
 
     @Override
