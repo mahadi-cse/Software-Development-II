@@ -3,6 +3,7 @@ package com.example.bangladeshrailway;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -54,11 +55,13 @@ public class VerifyTicket extends AppCompatActivity {
            String pnrt= pnr.getText().toString();
            firestore  = FirebaseFirestore.getInstance();
            firestore.collection("PNR").document(pnrt).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+               @SuppressLint("SetTextI18n")
                @Override
                public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                     ModelVerifyTicket modelVerifyTicket = documentSnapshot.toObject(ModelVerifyTicket.class);
 
+                   assert modelVerifyTicket != null;
                    currentorissu.setText(modelVerifyTicket.getCurrentTime());
                    jpurnydate.setText(modelVerifyTicket.getDate()+modelVerifyTicket.getDeptTime());
                    trainname .setText(modelVerifyTicket.getTrainname());
