@@ -17,9 +17,6 @@
         android:theme="@style/Theme.BangladeshRailway"
         tools:targetApi="31">
         <activity
-            android:name=".TicketFareShow"
-            android:exported="false" />
-        <activity
             android:name=".TicketShow"
             android:exported="false" />
         <activity

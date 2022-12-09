@@ -12,10 +12,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -30,7 +35,8 @@ public class TicketFare extends AppCompatActivity {
     FirebaseFirestore firestore;
     Button submit;
     public String fromUser,toUser,path;
-
+    TextView ac_b,ac_s,snigdha,s_chair,shovon,route;
+    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +51,17 @@ public class TicketFare extends AppCompatActivity {
         to=findViewById(R.id.to_des);
         submit = findViewById(R.id.sub_find_train);
 
-        Intent intent = new Intent(getApplicationContext(),TicketFareShow.class);
+        ac_b=findViewById(R.id.ac_b);
+        ac_s=findViewById(R.id.ac_s);
+        snigdha=findViewById(R.id.snigdha);
+        s_chair=findViewById(R.id.s_chair);
+        shovon=findViewById(R.id.shovon);
+        route=findViewById(R.id.path);
+        relativeLayout=findViewById(R.id.relativeprice);
+
+
+
+        relativeLayout.setVisibility(View.GONE);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
@@ -75,23 +91,41 @@ public class TicketFare extends AppCompatActivity {
 
         from.setOnItemClickListener((parent, view, position, id) -> {
             fromUser = parent.getItemAtPosition(position).toString();
-            intent.putExtra("from",fromUser);
+
         });
 
         to.setOnItemClickListener((parent, view, position, id) -> {
             toUser = parent.getItemAtPosition(position).toString();
-            intent.putExtra("to",toUser);
         });
-
-
-
 
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                path = fromUser+"-"+toUser;
+                route.setText(path);
+                firestore= FirebaseFirestore.getInstance();
+                firestore.collection("FindTrain").document(path).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        ModelFare modelFare = documentSnapshot.toObject(ModelFare.class);
+                        ac_b.setText(modelFare.getAC_B());
+                        ac_s.setText(modelFare.getAC_S());
+                        snigdha.setText(modelFare.getSNIGDHA());
+                        s_chair.setText(modelFare.getS_CHAIR());
+                        shovon.setText(modelFare.getSHOVON());
 
-                startActivity(intent);
+                        relativeLayout.setVisibility(View.VISIBLE);
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(), "Failed to load Data", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
             }
         });
 

@@ -7,11 +7,142 @@
     tools:context=".TicketFare">
 
 
+
+
     <RelativeLayout
+        android:layout_below="@+id/relativesearch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeprice">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="Dhaka-Rajshahi"
+            android:id="@+id/path"
+            android:textColor="@color/border_color"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TableLayout
+            android:layout_below="@+id/path"
+            android:layout_marginTop="20dp"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:background="@color/border_color">
+                <TextView
+                    android:text="Class"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20dp"
+                    />
+                <TextView
+                    android:text="Price"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="20dp"
+                    />
+            </TableRow>
+            <TableRow
+                android:background="@color/coach">
+                <TextView
+                    android:text="AC_B"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/ac_b"
+                    android:text="1775 BDT"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="15dp"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:background="@color/coach">
+                <TextView
+                    android:text="AC_S"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/ac_s"
+                    android:text="1375 BDT"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="15dp"
+                    />
+            </TableRow>
+            <TableRow
+                android:background="@color/coach">
+                <TextView
+                    android:text="SNIGDHA"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/snigdha"
+                    android:text="975 BDT"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="15dp"
+                    />
+            </TableRow>
+            <TableRow
+                android:background="@color/coach">
+                <TextView
+                    android:text="S_CHAIR"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/s_chair"
+                    android:text="465 BDT"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="15dp"
+                    />
+            </TableRow>
+            <TableRow
+                android:background="@color/coach">
+                <TextView
+                    android:text="SHOVON"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/shovon"
+                    android:text="360 BDT"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="80dp"
+                    android:textSize="15dp"
+                    />
+            </TableRow>
+
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="-40dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/relativesearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:id="@+id/from"
@@ -26,7 +157,7 @@
                 android:id="@+id/from_des"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="10dp"
                 android:autofillHints=""
                 android:drawableStart="@drawable/ic_source"
                 android:drawablePadding="16dp"
