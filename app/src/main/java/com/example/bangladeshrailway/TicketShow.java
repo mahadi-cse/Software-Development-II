@@ -13,7 +13,13 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,8 +27,13 @@ import java.io.IOException;
 
 public class TicketShow extends AppCompatActivity {
 
+    TextView currentorissu,jpurnydate,trainname,from,to,classname,coachname,seat,price,total,phone,pnrT,name,nid,dear;
+    FirebaseFirestore firestore;
+    FirebaseAuth auth;
     RelativeLayout relativeLayout;
     Bitmap bitmap;
+    String logEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +42,55 @@ public class TicketShow extends AppCompatActivity {
 
         relativeLayout=findViewById(R.id.relativeforticket);
         Button button = findViewById(R.id.downloadticket);
+
+        currentorissu=findViewById(R.id.currentorissu);
+        jpurnydate=findViewById(R.id.jpurnydate);
+        trainname=findViewById(R.id.trainname);
+        from=findViewById(R.id.from);
+        to=findViewById(R.id.to);
+        classname=findViewById(R.id.classname);
+        coachname=findViewById(R.id.coachname);
+        seat=findViewById(R.id.seat);
+        price=findViewById(R.id.price);
+        total=findViewById(R.id.totalprice);
+        phone=findViewById(R.id.phone);
+        pnrT=findViewById(R.id.pnr);
+        name=findViewById(R.id.name);
+        nid=findViewById(R.id.nid);
+        dear=findViewById(R.id.dear);
+
+        String pnr=getIntent().getStringExtra("pnr");
+
+        auth=FirebaseAuth.getInstance();
+        if(auth.getCurrentUser()!=null){
+            logEmail=auth.getCurrentUser().getEmail();
+        }
+
+        firestore=FirebaseFirestore.getInstance();
+        firestore.collection("UserInfo").document(logEmail).collection("tickets").document(pnr).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                ModelTicket modelTicket = documentSnapshot.toObject(ModelTicket.class);
+
+                currentorissu.setText(modelTicket.getCurrentTime());
+                jpurnydate.setText(modelTicket.getDate()+modelTicket.getDeptTime());
+                trainname .setText(modelTicket.getTrainname());
+                from.setText(modelTicket.getFrom());
+                to .setText(modelTicket.getTo());
+                classname.setText(modelTicket.getClass_seat());
+                coachname .setText(modelTicket.getCoach());
+                seat.setText(modelTicket.getSeat());
+                price.setText(modelTicket.getPrice()+" BDT");
+                total.setText(modelTicket.getPrice()+" BDT");
+                name.setText(modelTicket.getName());
+                nid.setText(modelTicket.getNid());
+                phone.setText(modelTicket.getPhone());
+                dear.setText("Dear"+modelTicket.getName());
+                pnrT.setText(modelTicket.getPnr());
+
+            }
+        });
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

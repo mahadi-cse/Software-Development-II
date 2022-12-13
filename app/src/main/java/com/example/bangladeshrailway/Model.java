@@ -146,6 +146,12 @@ public class Model {
         else if(Objects.equals(type, "SNIGDHA")){
             price=priceSNIGDHA;
         }
+        else if(Objects.equals(type, "AC_B")){
+            price=priceAC_B;
+        }
+        else if(Objects.equals(type, "SHOVON")){
+            price=priceSHOVON;
+        }
         return price;
     }
 

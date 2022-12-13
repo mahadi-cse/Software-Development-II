@@ -48,8 +48,10 @@ public class Tickets extends Fragment {
         adapterTicket = new AdapterTicket(arrayList, new AdapterTicket.itemClickListener() {
             @Override
             public void onItemClick(ModelTicket modelTicket) {
-                Toast.makeText(getActivity(), modelTicket.getPnr(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(),TicketShow.class);
+
+                String pnr=modelTicket.getPnr();
+                intent.putExtra("pnr",pnr);
                 startActivity(intent);
             }
         });

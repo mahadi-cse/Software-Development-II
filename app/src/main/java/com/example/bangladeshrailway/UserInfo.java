@@ -63,6 +63,7 @@ public class UserInfo extends Fragment {
                 email.setText("Email  : "+modelUser.getEmail());
                 nid.setText("NID : "+modelUser.getNid());
                 phone.setText("Phone : "+modelUser.getPhone());
+
                 if (progressDialog.isShowing())
                     progressDialog.dismiss();
             }

@@ -57,7 +57,9 @@ public class FindTrainShow extends AppCompatActivity {
 
                 String date = getIntent().getStringExtra("date");
                 String classp = getIntent().getStringExtra("class");
+
                 String price= model.getPrice(classp);
+
 
                 intent.putExtra("from",from);
                 intent.putExtra("to",to);

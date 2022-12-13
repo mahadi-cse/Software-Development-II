@@ -35,8 +35,8 @@
             android:background="@drawable/back"
             android:drawablePadding="16dp"
             android:inputType="none"
+            android:hint="Jouney Date"
             android:paddingStart="10dp"
-            android:text="2-12-22"
             android:textSize="16sp"
             app:drawableStartCompat="@drawable/ic_date"
             tools:ignore="RtlSymmetry,TextFields" />
@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true">
         <TextView
+            android:hint="Departure time"
             android:id="@+id/dept"
             android:layout_width="350dp"
             android:layout_height="50dp"
@@ -60,7 +61,6 @@
             android:drawablePadding="16dp"
             android:inputType="none"
             android:paddingStart="10dp"
-            android:text="10.10"
             android:textSize="16sp"
             app:drawableStartCompat="@drawable/ic_date"
             tools:ignore="RtlSymmetry,TextFields" />
@@ -69,86 +69,21 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <RelativeLayout
-        android:id="@+id/relative_class"
-        android:layout_marginTop="80dp"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/date_layout"
-        android:background="@drawable/back"
-        >
 
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:layout_centerVertical="true"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/ic_se_cla" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/class_select"
-            android:layout_width="450dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="50dp"
-            android:layout_centerVertical="true">
-
-            <Spinner
-                android:id="@+id/spinner_class"
-                android:layout_width="250dp"
-                android:layout_height="match_parent" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/relative_person"
-        android:layout_marginTop="20dp"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/relative_class"
-        android:background="@drawable/back"
-
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="6dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/ic_person_green" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/person_count"
-            android:layout_width="450dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="50dp"
-            android:layout_centerVertical="true">
-
-            <Spinner
-                android:id="@+id/person_spinner"
-                android:layout_width="250dp"
-                android:layout_height="match_parent" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </RelativeLayout>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:hint="      3500"
+        android:paddingStart="30dp"
+        android:hint="(Amount) Without Online Charge"
         android:ems="16"
         android:id="@+id/fare"
-        android:layout_below="@id/relative_person"
+        android:layout_below="@id/dept_layout"
         android:layout_marginTop="20dp"
         android:background="@drawable/back"
         android:layout_centerHorizontal="true"
         />
+
     <Button
         android:id="@+id/calculaterefund"
         android:layout_width="wrap_content"
