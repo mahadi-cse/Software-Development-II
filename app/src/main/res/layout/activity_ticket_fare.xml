@@ -10,7 +10,6 @@
 
 
     <RelativeLayout
-        android:layout_below="@+id/relativesearch"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_width="wrap_content"
@@ -24,7 +23,7 @@
             android:text="Dhaka-Rajshahi"
             android:id="@+id/path"
             android:textColor="@color/border_color"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true"
             />
 
@@ -137,6 +136,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:layout_below="@+id/relativeprice"
         android:layout_marginTop="-40dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/relativesearch"

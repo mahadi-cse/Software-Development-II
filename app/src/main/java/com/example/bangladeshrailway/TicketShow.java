@@ -85,7 +85,7 @@ public class TicketShow extends AppCompatActivity {
                 name.setText(modelTicket.getName());
                 nid.setText(modelTicket.getNid());
                 phone.setText(modelTicket.getPhone());
-                dear.setText("Dear"+modelTicket.getName());
+                dear.setText("Dear  "+modelTicket.getName());
                 pnrT.setText(modelTicket.getPnr());
 
             }

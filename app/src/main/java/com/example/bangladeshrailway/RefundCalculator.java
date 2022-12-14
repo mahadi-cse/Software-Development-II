@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -26,7 +27,8 @@ import java.util.Objects;
 
 public class RefundCalculator extends AppCompatActivity {
 
-    TextView journeydate,depttime;
+    TextView journeydate,depttime,refund;
+    EditText amount_et;
     String date,dept,currentTime,journeydatestring;
 
     @Override
@@ -37,9 +39,13 @@ public class RefundCalculator extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+
         journeydate=findViewById(R.id.date);
         depttime=findViewById(R.id.dept);
         Button btn = findViewById(R.id.calculaterefund);
+        refund = findViewById(R.id.fareofrefund);
+        amount_et = findViewById(R.id.fare);
+        refund.setVisibility(View.GONE);
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -112,6 +118,7 @@ public class RefundCalculator extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private void printDifference(Date startDate, Date endDate) {
         long different = endDate.getTime() - startDate.getTime();
 
@@ -129,7 +136,25 @@ public class RefundCalculator extends AppCompatActivity {
         long elapsedMinutes = different / minutesInMilli;
         different = different % minutesInMilli;
 
-        Toast.makeText(getApplicationContext(), String.valueOf(elapsedDays), Toast.LENGTH_SHORT).show();
+        String fareamount = amount_et.getText().toString();
+
+//        Toast.makeText(getApplicationContext(), String.valueOf(elapsedDays), Toast.LENGTH_SHORT).show();
+        if(((elapsedDays*24)+elapsedHours)>=48){
+            refund.setText("Your Refund is "+ String.valueOf(Integer.parseInt(fareamount)-25)+" BDT");
+        }
+        else if(((elapsedDays*24)+elapsedHours)<=48 && ((elapsedDays*24)+elapsedHours)>=24){
+            refund.setText("Your Refund is "+ String.valueOf(Integer.parseInt(fareamount)*0.75)+" BDT");
+        }
+        else if(((elapsedDays*24)+elapsedHours)<=24 && ((elapsedDays*24)+elapsedHours)>=12){
+            refund.setText("Your Refund is "+ String.valueOf(Integer.parseInt(fareamount)*0.5)+" BDT");
+        }
+        else if(((elapsedDays*24)+elapsedHours)<=12 && ((elapsedDays*24)+elapsedHours)>=06){
+            refund.setText("Your Refund is "+ String.valueOf(Integer.parseInt(fareamount)*0.25)+" BDT");
+        }
+        else if(((elapsedDays*24)+elapsedHours)<=6){
+            refund.setText("Your Refund is "+ 0 +" BDT");
+        }
+        refund.setVisibility(View.VISIBLE);
 
     }
 

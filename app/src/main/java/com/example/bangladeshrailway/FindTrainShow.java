@@ -53,6 +53,7 @@ public class FindTrainShow extends AppCompatActivity {
                 String to = model.getTo();
                 String trainname = model.getName();
                 String deptTime=model.getDepartureTime();
+                String arraivalTime=model.getArraivalTime();
 
 
                 String date = getIntent().getStringExtra("date");
@@ -68,6 +69,7 @@ public class FindTrainShow extends AppCompatActivity {
                 intent.putExtra("class",classp);
                 intent.putExtra("deptTime",deptTime);
                 intent.putExtra("price",price);
+                intent.putExtra("arraivalTime",arraivalTime);
 
                 Toast.makeText(FindTrainShow.this, model.getName(), Toast.LENGTH_SHORT).show();
                 startActivity(intent);

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class SeatSelcetion extends AppCompatActivity implements View.OnClickListener {
+    TextView trinnameTV,arraiveselection,departureselection,deparaturetimeselection,arraivetimeselection;
 
     CardView s_42,s_43;
     CardView gha,neo;
@@ -36,8 +38,7 @@ public class SeatSelcetion extends AppCompatActivity implements View.OnClickList
 
     Button continueSelection;
 
-    String logEmail,from,to,trainname,route,date,classp;
-    String s_name,s_email,s_nid,s_phone,deptTime;
+    String logEmail,from,to,trainname,route,date,classp,s_name,s_email,s_nid,s_phone,deptTime,arraivalTime;
 
     FirebaseAuth auth;
     FirebaseFirestore firestore;
@@ -55,6 +56,12 @@ public class SeatSelcetion extends AppCompatActivity implements View.OnClickList
 
         gha=findViewById(R.id.gha);
         neo=findViewById(R.id.neo);
+
+        trinnameTV=findViewById(R.id.trainnameselection);
+        arraiveselection=findViewById(R.id.arraiveselection);
+        departureselection=findViewById(R.id.departureselection);
+        deparaturetimeselection=findViewById(R.id.deparaturetimeselection);
+        arraivetimeselection=findViewById(R.id.arraivetimeselection);
 
         continueSelection=findViewById(R.id.continuebtn);
 
@@ -77,6 +84,13 @@ public class SeatSelcetion extends AppCompatActivity implements View.OnClickList
         classp=getIntent().getStringExtra("class");
         deptTime=getIntent().getStringExtra("deptTime");
         price=getIntent().getStringExtra("price");
+        arraivalTime=getIntent().getStringExtra("arraivalTime");
+
+        trinnameTV.setText(trainname);
+        arraiveselection.setText(to);
+        departureselection.setText(from);
+        deparaturetimeselection.setText(deptTime);
+        arraivetimeselection.setText(arraivalTime);
 
 
 
@@ -128,7 +142,7 @@ public class SeatSelcetion extends AppCompatActivity implements View.OnClickList
                 firestore.collection("PNR").document(pnr).set(info).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(SeatSelcetion.this, "Added to PNR", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(SeatSelcetion.this, "Added to PNR", Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -136,7 +150,7 @@ public class SeatSelcetion extends AppCompatActivity implements View.OnClickList
                         document(String.valueOf(pnr)).set(info).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Toast.makeText(SeatSelcetion.this, "Created", Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(SeatSelcetion.this, "Created", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(),TicketConfrimed.class));
                                 finish();
                             }

@@ -9,14 +9,13 @@
     <TextView
         android:id="@+id/fareofrefund"
         android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:text="Your Refund is 1200 BDT"
         android:textColor="@color/border_color"
-        android:textStyle="bold"
-        />
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
 
@@ -70,19 +69,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
     <EditText
+        android:id="@+id/fare"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:paddingStart="30dp"
-        android:hint="(Amount) Without Online Charge"
-        android:ems="16"
-        android:id="@+id/fare"
         android:layout_below="@id/dept_layout"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/back"
-        android:layout_centerHorizontal="true"
-        />
+        android:ems="16"
+        android:hint="(Amount) Without Online Charge"
+        android:paddingStart="30dp" />
 
     <Button
         android:id="@+id/calculaterefund"
